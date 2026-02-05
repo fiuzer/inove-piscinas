@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Star, Wrench } from "lucide-react";
@@ -13,7 +13,7 @@ const badges = [
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-[var(--brand-deep)] pt-16 text-white sm:pt-20">
+    <section className="relative isolate overflow-hidden bg-[var(--brand-deep)] pt-8 text-white sm:pt-12">
       <div className="absolute inset-0">
         <Image
           src="https://images.unsplash.com/photo-1543489822-c49534f3271f?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -22,27 +22,39 @@ export function Hero() {
           priority
           className="object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-deep)] via-[rgba(0,29,61,0.75)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(0,29,61,0.35)] via-[rgba(0,29,61,0.2)] to-transparent sm:from-[var(--brand-deep)] sm:via-[rgba(0,29,61,0.75)]" />
       </div>
 
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-24 lg:flex-row lg:items-center lg:gap-16 lg:pb-28 lg:pt-28">
-        <div className="flex-1 space-y-8">
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px pb-20 pt-14 lg:flex-row lg:items-center lg:gap-16 lg:pb-28 lg:pt-20">
+        <div className="order-2 flex-1 space-y-5 pl-4 sm:pl-6 lg:order-1 lg:pl-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-4"
           >
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/80">
-              Inove Piscinas
+            <p className="text-xl font-semibold uppercase tracking-[0.2em] text-white/80">
+              Sua piscina está desbotada?
             </p>
-            <h1 className="font-heading text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-              Sua piscina pronta para impressionar de novo.
+            <h1 className="font-heading text font-semibold leading-tight text-4xl sm:text-5xl lg:text-6xl">
+              Somos especialistas em reforma de{" "}
+              <span className="whitespace-nowrap">piscina de fibra!</span>
             </h1>
+            <div className="mt-6 lg:hidden">
+              <BeforeAfterSlider
+                beforeSrc="https://images.unsplash.com/photo-1630350165500-da78b1bf1e23?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                afterSrc="https://images.unsplash.com/photo-1541253035814-2aface021e5b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                beforeAlt="Piscina antes da reforma"
+                afterAlt="Piscina depois da reforma"
+              />
+              <div className="mt-4 flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/70">
+                <span>Antes</span>
+                <span>Depois</span>
+              </div>
+            </div>
             <p className="text-base text-white/80 sm:text-lg">
               Reforma, pintura e manutenção de piscinas de fibra e alvenaria no
-              Rio de Janeiro e Niterói. Atendimento rápido, orçamento claro e
-              execução com garantia.
+              Rio de Janeiro e Niterói. Atendimento rápido, orçamento claro e execução com garantia.
             </p>
           </motion.div>
 
@@ -89,7 +101,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex-1"
+          className="order-1 hidden flex-1 lg:order-2 lg:block"
         >
           <BeforeAfterSlider
             beforeSrc="https://images.unsplash.com/photo-1630350165500-da78b1bf1e23?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -106,3 +118,7 @@ export function Hero() {
     </section>
   );
 }
+
+
+
+

@@ -20,8 +20,8 @@ export function BeforeAfterSlider({
   const id = useId();
 
   return (
-    <div className="relative w-full overflow-hidden rounded-3xl border border-white/20 bg-white/10 shadow-xl backdrop-blur">
-      <div className="relative h-[320px] w-full sm:h-[380px] lg:h-[420px]">
+    <div className="relative mx-auto w-[calc(100%-2rem)] max-w-[520px] overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-xl backdrop-blur sm:w-full sm:max-w-none">
+      <div className="relative h-[220px] w-full sm:h-[300px] lg:h-[420px]">
         <Image
           src={afterSrc}
           alt={afterAlt}
@@ -31,8 +31,8 @@ export function BeforeAfterSlider({
           priority
         />
         <div
-          className="absolute inset-0 overflow-hidden"
-          style={{ width: `${value}%` }}
+          className="absolute inset-0"
+          style={{ clipPath: `inset(0 ${100 - value}% 0 0)` }}
         >
           <Image
             src={beforeSrc}
@@ -53,7 +53,7 @@ export function BeforeAfterSlider({
         </div>
       </div>
 
-      <div className="flex items-center gap-4 px-6 py-4">
+      <div className="flex items-center gap-4 px-4 py-3 sm:px-6 sm:py-4">
         <label
           htmlFor={id}
           className="text-sm font-semibold text-white"

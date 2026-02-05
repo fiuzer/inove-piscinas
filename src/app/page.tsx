@@ -31,7 +31,7 @@ export default function Home() {
     },
     areaServed: ["Rio de Janeiro", "Niterói"],
     telephone: "+55 21 99373-9579",
-    url: "https://www.inovepiscinas.com.br",
+    url: "https://www.inovepiscinas.com",
     priceRange: "$$",
     openingHours: "Mo-Sa 08:00-20:00",
   };

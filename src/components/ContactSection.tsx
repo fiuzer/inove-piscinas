@@ -1,11 +1,11 @@
 "use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { motion } from "framer-motion";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Phone, Mail, Clock, MapPin } from "lucide-react";
-import { motion } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
 
 const formSchema = z.object({
