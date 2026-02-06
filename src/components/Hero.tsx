@@ -42,8 +42,8 @@ export function Hero() {
             </h1>
             <div className="mt-6 lg:hidden">
               <BeforeAfterSlider
-                beforeSrc="https://images.unsplash.com/photo-1630350165500-da78b1bf1e23?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                afterSrc="https://images.unsplash.com/photo-1541253035814-2aface021e5b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                beforeSrc="/imagens/antes_piscina.jpg"
+                afterSrc="/imagens/depois_piscina.jpg"
                 beforeAlt="Piscina antes da reforma"
                 afterAlt="Piscina depois da reforma"
               />
@@ -104,8 +104,8 @@ export function Hero() {
           className="order-1 hidden flex-1 lg:order-2 lg:block"
         >
           <BeforeAfterSlider
-            beforeSrc="https://images.unsplash.com/photo-1630350165500-da78b1bf1e23?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            afterSrc="https://images.unsplash.com/photo-1541253035814-2aface021e5b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            beforeSrc="/imagens/antes_piscina.jpg"
+            afterSrc="/imagens/depois_piscina.jpg"
             beforeAlt="Piscina antes da reforma"
             afterAlt="Piscina depois da reforma"
           />

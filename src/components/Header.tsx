@@ -1,8 +1,9 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
-import { Menu, X, Waves } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const links = [
   { label: "Serviços", href: "#servicos" },
@@ -46,25 +47,30 @@ export function Header() {
         }`}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#" className="flex items-center gap-2 font-semibold">
-          <span className="flex size-9 items-center justify-center rounded-full bg-[var(--brand)] text-white">
-            <Waves className="size-5" />
-          </span>
-          <span className="font-heading text-lg">Inove Pools</span>
+          <a href="#" className="flex items-center gap-3 font-semibold">
+            <span className="relative mt-0.5 h-12 w-36">
+              <Image
+                src="/imagens/logo-branca-inove.PNG"
+                alt="Inove Piscinas"
+                fill
+                className="object-contain"
+                priority
+              />
+            </span>
           </a>
 
           <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
-          {links.map((link) => (
-            <a key={link.href} href={link.href} className="hover:text-[var(--brand)]">
-              {link.label}
+            {links.map((link) => (
+              <a key={link.href} href={link.href} className="hover:text-[var(--brand)]">
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="#contato"
+              className="rounded-full bg-[var(--brand)] px-5 py-2 text-xs font-semibold uppercase tracking-widest text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[var(--brand-dark)]"
+            >
+              Peça seu orçamento
             </a>
-          ))}
-          <a
-            href="#contato"
-            className="rounded-full bg-[var(--brand)] px-5 py-2 text-xs font-semibold uppercase tracking-widest text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[var(--brand-dark)]"
-          >
-            Peça seu orçamento
-          </a>
           </nav>
 
           <button

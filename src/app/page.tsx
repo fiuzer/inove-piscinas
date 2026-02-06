@@ -45,13 +45,13 @@ export default function Home() {
 
       <Header />
       <Hero />
-      <WaveDivider />
+      <WaveDivider flip />
       <Services />
       <WaveDivider />
       <Gallery />
-      <WaveDivider />
+      <WaveDivider flip />
       <Testimonials />
-      <WaveDivider variant="dark" />
+      <WaveDivider variant="dark" flip />
       <ContactSection />
       <FloatingWhatsApp />
 

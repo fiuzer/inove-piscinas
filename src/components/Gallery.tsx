@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
@@ -7,24 +7,24 @@ import { SectionHeading } from "./SectionHeading";
 
 const gallery = [
   {
-    src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "/imagens/piscina-1.jpg",
     alt: "Piscina residencial com iluminação azul",
     className: "md:col-span-2 md:row-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "/imagens/piscina-2.jpg",
     alt: "Detalhe de borda de piscina renovada",
   },
   {
-    src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "/imagens/piscina-3.jpg",
     alt: "Piscina pronta para uso",
   },
   {
-    src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "/imagens/piscina-4.jpg",
     alt: "Manutenção técnica em piscina",
   },
   {
-    src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "/imagens/piscina-5.jpg",
     alt: "Área de lazer com piscina revitalizada",
     className: "md:col-span-2",
   },
@@ -57,7 +57,7 @@ export function Gallery() {
 
         <div className="mt-12 grid gap-4 md:grid-cols-4 md:auto-rows-[180px]">
           {gallery.map((item) => (
-            <button 
+            <button
               key={item.src}
               type="button"
               onClick={() => setSelected(item)}

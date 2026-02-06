@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
@@ -71,6 +71,9 @@ export function ContactSection() {
           eyebrow="Contato"
           title="Vamos cuidar da sua piscina?"
           description="Solicite um orçamento rápido ou tire dúvidas com nosso time."
+          titleClassName="text-white"
+          eyebrowClassName="text-base sm:text-lg"
+          descriptionClassName="text-white/70 text-sm sm:text-base"
         />
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
