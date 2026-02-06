@@ -50,7 +50,11 @@ export function Header() {
           <a href="#" className="flex items-center gap-3 font-semibold">
             <span className="relative mt-0.5 h-12 w-36">
               <Image
-                src="/imagens/logo-branca-inove.PNG"
+                src={
+                  scrolled
+                    ? "/imagens/logo-inove-piscinas-azul.PNG"
+                    : "/imagens/logo-branca-inove.PNG"
+                }
                 alt="Inove Piscinas"
                 fill
                 className="object-contain"
