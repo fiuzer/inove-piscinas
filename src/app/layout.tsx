@@ -32,6 +32,11 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: "/",
   },
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
   twitter: {
     card: "summary_large_image",
   },
