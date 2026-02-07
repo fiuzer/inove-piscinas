@@ -50,7 +50,7 @@ export function BeforeAfterSlider({
           src={afterSrc}
           alt={afterAlt}
           fill
-          sizes="(max-width: 768px) 100vw, 50vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 520px"
           className="object-cover"
           priority
         />
@@ -62,7 +62,7 @@ export function BeforeAfterSlider({
             src={beforeSrc}
             alt={beforeAlt}
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 520px"
             className="object-cover"
           />
         </div>

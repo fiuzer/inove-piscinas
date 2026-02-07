@@ -70,7 +70,7 @@ export function Gallery() {
                 alt={item.alt}
                 fill
                 className="object-cover transition duration-500 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-70 transition group-hover:opacity-90" />
               <span className="absolute bottom-4 left-4 text-sm font-semibold text-white">
