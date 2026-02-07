@@ -66,8 +66,9 @@ export function BeforeAfterSlider({
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 520px"
           quality={70}
-          className="object-cover"
           priority
+          fetchPriority="high"
+          className="object-cover"
         />
         <div
           className="absolute inset-0"
