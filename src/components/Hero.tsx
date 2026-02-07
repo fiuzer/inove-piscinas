@@ -72,7 +72,9 @@ export function Hero() {
               <ArrowRight className="size-4" />
             </a>
             <a
-              href="https://wa.me/5521993739579"
+              href="https://wa.me/5521993739579?text=Ol%C3%A1!%20Vim%20atraves%20do%20seu%20site%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white hover:bg-white/10"
             >
               Falar no WhatsApp

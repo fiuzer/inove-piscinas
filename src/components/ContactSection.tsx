@@ -24,6 +24,7 @@ const sanitize = (value: string) =>
 
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const {
     register,
     handleSubmit,
@@ -55,7 +56,21 @@ export function ContactSection() {
       message: sanitize(data.message),
     };
 
-    console.log("Contato recebido", sanitized);
+    setErrorMessage(null);
+
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(sanitized),
+    });
+
+    if (!response.ok) {
+      setErrorMessage("Não foi possível enviar. Tente novamente.");
+      return;
+    }
+
     setSubmitted(true);
     reset();
   };
@@ -203,6 +218,10 @@ export function ContactSection() {
             >
               {isSubmitting ? "Enviando..." : "Peça seu orçamento"}
             </button>
+
+            {errorMessage ? (
+              <p className="mt-4 text-sm text-red-500">{errorMessage}</p>
+            ) : null}
 
             {submitted ? (
               <p className="mt-4 text-sm text-emerald-600">

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -7,19 +7,28 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "João Pedro",
-    city: "Niterói",
-    text: "Fizeram a reforma completa da minha piscina e o resultado foi impecável. Atendimento rápido e organizado.",
+    name: "Mauricio Cymerman",
+    city: "Rio de Janeiro",
+    rating: 5,
+    text: "Atendimento 100%. Além da reforma, deram um suporte de como ajustar a montagem da alvenaria e refizeram o dispositivo de aspiração para outra lateral. Foi bem sincero quanto a utilização do Gelcolt, que eles não utilizam, que era uma preocupação minha, e a piscina está perfeita. Com certeza as próximas reformas serão com a equipe INOVE!",
   },
   {
-    name: "Carla Menezes",
-    city: "Barra da Tijuca",
-    text: "Equipe muito profissional, cumpriram o prazo e explicaram cada etapa. Recomendo!",
+    name: "Edmundo Novaes",
+    city: "Rio de Janeiro",
+    rating: 5,
+    text: "Fiz uma reforma completa na minha piscina com a equipe da Inove Piscinas e o resultado ficou excelente. O serviço foi muito bem executado, com atenção aos detalhes e grande profissionalismo. O atendimento do Leonardo merece destaque pela cordialidade, transparência e comprometimento em todas as etapas. Além disso, o preço cobrado foi totalmente justo, especialmente considerando a qualidade do trabalho entregue. Recomendo sem hesitar a Inove Piscinas para quem busca um serviço de alto nível.",
   },
   {
-    name: "Rafael Souza",
-    city: "Tijuca",
-    text: "A pintura ficou perfeita e a água voltou a ficar cristalina. Serviço de primeira.",
+    name: "Cley Dejosi",
+    city: "Rio de Janeiro",
+    rating: 5,
+    text: "Serviço executado 100%, ficou muito bonita, em vista do que estava, equipe super profissional.",
+  },
+  {
+    name: "Renata Peres",
+    city: "Rio de Janeiro",
+    rating: 5,
+    text: "Estou muito satisfeita com o serviço de reforço e pintura da minha piscina. Excelente atendimento, profissionais competentes e caprichosos.",
   },
 ];
 
@@ -32,7 +41,7 @@ export function Testimonials() {
   useEffect(() => {
     const timer = window.setInterval(() => {
       setIndex((prev) => (prev + 1) % total);
-    }, 6000);
+    }, 7000);
 
     return () => window.clearInterval(timer);
   }, [total]);
@@ -43,7 +52,7 @@ export function Testimonials() {
         <SectionHeading
           eyebrow="Prova social"
           title="Quem contrata, aprova"
-          description="Avaliações reais de clientes satisfeitos em toda a região."
+          description="Avaliações reais de clientes no Google."
           align="center"
         />
 
@@ -58,7 +67,7 @@ export function Testimonials() {
               className="space-y-6"
             >
               <div className="flex items-center gap-1 text-[var(--brand)]">
-                {Array.from({ length: 5 }).map((_, idx) => (
+                {Array.from({ length: current.rating }).map((_, idx) => (
                   <Star key={idx} className="size-4 fill-current" />
                 ))}
               </div>
@@ -101,3 +110,4 @@ export function Testimonials() {
     </section>
   );
 }
+

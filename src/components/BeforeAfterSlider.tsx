@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useId, useState } from "react";
+import type React from "react";
+import { useId, useRef, useState } from "react";
 
 type BeforeAfterSliderProps = {
   beforeSrc: string;
@@ -18,10 +19,33 @@ export function BeforeAfterSlider({
 }: BeforeAfterSliderProps) {
   const [value, setValue] = useState(55);
   const id = useId();
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  const updateFromClientX = (clientX: number) => {
+    const rect = containerRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const next = ((clientX - rect.left) / rect.width) * 100;
+    const clamped = Math.min(100, Math.max(0, next));
+    setValue(clamped);
+  };
+
+  const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+    (event.currentTarget as HTMLDivElement).setPointerCapture(event.pointerId);
+    updateFromClientX(event.clientX);
+  };
+
+  const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
+    if ((event.currentTarget as HTMLDivElement).hasPointerCapture(event.pointerId)) {
+      updateFromClientX(event.clientX);
+    }
+  };
 
   return (
-    <div className="relative mx-auto w-[calc(100%-2rem)] max-w-[520px] overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-xl backdrop-blur sm:w-full sm:max-w-none">
-      <div className="relative h-[220px] w-full sm:h-[300px] lg:h-[420px]">
+    <div className="relative mx-auto select-none w-[calc(100%-2rem)] max-w-[520px] overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-xl backdrop-blur sm:w-full sm:max-w-none">
+      <div
+        ref={containerRef}
+        className="relative h-[220px] w-full sm:h-[300px] lg:h-[420px]"
+      >
         <Image
           src={afterSrc}
           alt={afterAlt}
@@ -43,11 +67,21 @@ export function BeforeAfterSlider({
           />
         </div>
         <div
-          className="pointer-events-none absolute inset-y-0"
+          className="absolute inset-y-0"
           style={{ left: `${value}%` }}
         >
           <div className="h-full w-1 -translate-x-1/2 bg-white/70" />
-          <div className="absolute left-1/2 top-1/2 flex size-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-white/90 text-xs font-semibold uppercase tracking-widest text-[var(--brand-deep)] shadow-lg">
+          <div
+            className="absolute left-1/2 top-1/2 flex size-12 -translate-x-1/2 -translate-y-1/2 cursor-grab select-none items-center justify-center rounded-full border border-white/40 bg-white/90 text-xs font-semibold uppercase tracking-widest text-[var(--brand-deep)] shadow-lg active:cursor-grabbing"
+            role="slider"
+            aria-label="Arraste para comparar"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={Math.round(value)}
+            tabIndex={0}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+          >
             Antes
           </div>
         </div>
