@@ -54,21 +54,15 @@ export function Hero() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <a
-              href="#contato"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[var(--brand-deep)] shadow-lg transition hover:-translate-y-0.5 hover:bg-white/90"
-            >
-              Peça seu orçamento
-              <ArrowRight className="size-4" />
-            </a>
-            <a
-              href="https://wa.me/5521993739579?text=Ol%C3%A1!%20Vim%20atraves%20do%20seu%20site%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento"
+              href="https://wa.me/5521993739579?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20seu%20site%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[var(--brand-deep)] shadow-lg transition hover:-translate-y-0.5 hover:bg-white/90"
             >
-              Falar no WhatsApp
+              Fale com um especialista
+              <ArrowRight className="size-4" />
             </a>
           </div>
 
@@ -106,6 +100,7 @@ export function Hero() {
     </section>
   );
 }
+
 
 
 
