@@ -10,6 +10,15 @@ export function FloatingWhatsApp() {
       rel="noopener noreferrer"
       className="glow-pulse fixed bottom-6 right-6 z-50 flex size-14 items-center justify-center rounded-full bg-emerald-500 shadow-xl transition hover:-translate-y-0.5 hover:bg-emerald-600"
       aria-label="Falar no WhatsApp"
+      onClick={() => {
+        if (typeof window !== "undefined") {
+          (window as typeof window & { dataLayer?: Array<Record<string, unknown>> })
+            .dataLayer?.push({
+              event: "whatsapp_click",
+              location: "floating",
+            });
+        }
+      }}
     >
       <Image
         src="/imagens/whatsapp.png"

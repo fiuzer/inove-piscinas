@@ -47,7 +47,7 @@ export function Gallery() {
   }, []);
 
   return (
-    <section id="projetos" className="bg-slate-50 py-20">
+    <section id="projetos" className="bg-slate-50 py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="Projetos"
@@ -55,7 +55,7 @@ export function Gallery() {
           description="Uma seleção de reformas e manutenções entregues com alto padrão de acabamento."
         />
 
-        <div className="mt-12 grid gap-4 md:grid-cols-4 md:auto-rows-[180px]">
+        <div className="mt-8 grid gap-4 md:grid-cols-4 md:auto-rows-[180px]">
           {gallery.map((item) => (
             <button
               key={item.src}

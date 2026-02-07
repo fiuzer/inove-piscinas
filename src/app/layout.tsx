@@ -1,5 +1,5 @@
 ﻿import type { Metadata } from "next";
-import { DM_Serif_Display, Manrope } from "next/font/google";
+import { Manrope, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -7,10 +7,10 @@ const manrope = Manrope({
   subsets: ["latin"],
 });
 
-const dmSerif = DM_Serif_Display({
+const montserrat = Montserrat({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -53,12 +53,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${manrope.variable} ${dmSerif.variable} antialiased`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W6ZQFMT3');`,
+          }}
+        />
+      </head>
+      <body className={`${manrope.variable} ${montserrat.variable} antialiased`}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-W6ZQFMT3"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         {children}
       </body>
     </html>
   );
 }
-
-
-

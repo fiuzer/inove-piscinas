@@ -51,7 +51,7 @@ export default function Home() {
       <Gallery />
       <WaveDivider flip />
       <Testimonials />
-      <WaveDivider variant="dark" flip />
+      <WaveDivider variant="dark" flip className="bg-white" />
       <ContactSection />
       <FloatingWhatsApp />
 

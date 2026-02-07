@@ -27,7 +27,7 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px pb-20 pt-14 lg:flex-row lg:items-center lg:gap-16 lg:pb-28 lg:pt-20">
-        <div className="order-2 flex-1 space-y-5 pl-4 sm:pl-6 lg:order-1 lg:pl-0">
+        <div className="order-2 flex-1 space-y-5 px-4 text-center sm:px-6 sm:text-left lg:order-1 lg:px-0 lg:text-left">
           <div className="space-y-4">
             <p className="text-xl font-semibold uppercase tracking-[0.2em] text-white/80">
               Sua piscina está desbotada?
@@ -54,12 +54,21 @@ export function Hero() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-start">
             <a
               href="https://wa.me/5521993739579?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20seu%20site%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[var(--brand-deep)] shadow-lg transition hover:-translate-y-0.5 hover:bg-white/90"
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  (window as typeof window & { dataLayer?: Array<Record<string, unknown>> })
+                    .dataLayer?.push({
+                      event: "whatsapp_click",
+                      location: "hero",
+                    });
+                }
+              }}
             >
               Fale com um especialista
               <ArrowRight className="size-4" />

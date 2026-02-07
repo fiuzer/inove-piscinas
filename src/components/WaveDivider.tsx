@@ -13,12 +13,12 @@ export function WaveDivider({
 }: WaveDividerProps) {
   return (
     <div
-      className={`relative w-full overflow-hidden ${className ?? ""}`}
+      className={`relative -mt-px w-full overflow-hidden ${className ?? ""}`}
       aria-hidden="true"
       {...props}
     >
       <svg
-        className={`h-24 w-full ${
+        className={`block h-20 w-full -mb-[2px] sm:h-24 ${
           flip ? "rotate-180" : ""
         } ${variant === "dark" ? "text-[var(--brand-deep)]" : "text-white"}`}
         viewBox="0 0 1440 160"

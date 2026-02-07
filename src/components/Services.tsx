@@ -52,7 +52,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="servicos" className="bg-white py-20">
+    <section id="servicos" className="bg-white py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="Serviços"
@@ -61,7 +61,7 @@ export function Services() {
           align="center"
         />
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (

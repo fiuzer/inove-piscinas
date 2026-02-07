@@ -71,27 +71,41 @@ export function ContactSection() {
       return;
     }
 
+    if (typeof window !== "undefined") {
+      (window as typeof window & { dataLayer?: Array<Record<string, unknown>> })
+        .dataLayer?.push({
+          event: "form_submit",
+          form_id: "contact",
+        });
+    }
+
     setSubmitted(true);
     reset();
   };
 
   return (
-    <section id="contato" className="relative bg-[var(--brand-deep)] py-20">
-      <div className="absolute inset-0 opacity-10">
-        <div className="h-full w-full bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.4),_transparent_55%)]" />
-      </div>
-
-      <div className="relative mx-auto max-w-6xl px-6 text-white">
+    <section id="contato" className="relative -mt-px bg-[var(--brand-deep)] py-12 sm:py-16">
+      <div className="mx-auto max-w-6xl px-6 text-white">
         <SectionHeading
           eyebrow="Contato"
-          title="Vamos cuidar da sua piscina?"
-          description="Solicite um orçamento rápido ou tire dúvidas com nosso time."
-          titleClassName="text-white"
-          eyebrowClassName="text-base sm:text-lg"
+          title={
+            <>
+              Vamos cuidar da sua <span className="text-white">piscina</span>?
+            </>
+          }
+          description={
+            <>
+              Solicite um orçamento rápido e 100% gratuito
+              <br />
+              com nosso time.
+            </>
+          }
+          titleClassName="text-sky-300"
+          eyebrowClassName="text-base sm:text-lg text-white/80"
           descriptionClassName="text-white/70 text-sm sm:text-base"
         />
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mt-8 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl backdrop-blur">
             <h3 className="text-xl font-semibold">Canais de atendimento</h3>
             <p className="text-sm text-white/80">

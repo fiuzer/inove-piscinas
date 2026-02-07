@@ -47,7 +47,7 @@ export function Testimonials() {
   }, [total]);
 
   return (
-    <section id="avaliacoes" className="bg-white py-20">
+    <section id="avaliacoes" className="bg-white py-12 sm:py-16">
       <div className="mx-auto max-w-5xl px-6">
         <SectionHeading
           eyebrow="Prova social"
@@ -56,7 +56,7 @@ export function Testimonials() {
           align="center"
         />
 
-        <div className="mt-12 rounded-3xl border border-slate-100 bg-slate-50 p-8 shadow-lg sm:p-10">
+        <div className="mt-8 rounded-3xl border border-slate-100 bg-slate-50 p-8 shadow-lg sm:p-10">
           <AnimatePresence mode="wait">
             <motion.div
               key={current.name}
