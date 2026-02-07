@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { SectionHeading } from "./SectionHeading";
@@ -25,7 +25,6 @@ const sanitize = (value: string) =>
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const lastEventRef = useRef(0);
   const {
     register,
     handleSubmit,
@@ -73,15 +72,11 @@ export function ContactSection() {
     }
 
     if (typeof window !== "undefined") {
-      const now = Date.now();
-      if (now - lastEventRef.current > 2000) {
-        (window as typeof window & { dataLayer?: Array<Record<string, unknown>> })
-          .dataLayer?.push({
-            event: "form_submit",
-            form_id: "contact",
-          });
-        lastEventRef.current = now;
-      }
+      (window as typeof window & { dataLayer?: Array<Record<string, unknown>> })
+        .dataLayer?.push({
+          event: "form_submit",
+          form_id: "contact",
+        });
     }
 
     setSubmitted(true);
