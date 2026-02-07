@@ -1,6 +1,5 @@
 ﻿"use client";
 
-import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Star, Wrench } from "lucide-react";
 import Image from "next/image";
 import { BeforeAfterSlider } from "./BeforeAfterSlider";
@@ -29,12 +28,7 @@ export function Hero() {
 
       <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px pb-20 pt-14 lg:flex-row lg:items-center lg:gap-16 lg:pb-28 lg:pt-20">
         <div className="order-2 flex-1 space-y-5 pl-4 sm:pl-6 lg:order-1 lg:pl-0">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-4"
-          >
+          <div className="space-y-4">
             <p className="text-xl font-semibold uppercase tracking-[0.2em] text-white/80">
               Sua piscina está desbotada?
             </p>
@@ -58,14 +52,9 @@ export function Hero() {
               Reforma, pintura e manutenção de piscinas de fibra e alvenaria no
               Rio de Janeiro e Niterói. Atendimento rápido, orçamento claro e execução com garantia.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex flex-wrap gap-4"
-          >
+          <div className="flex flex-wrap gap-4">
             <a
               href="#contato"
               className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[var(--brand-deep)] shadow-lg transition hover:-translate-y-0.5 hover:bg-white/90"
@@ -81,7 +70,7 @@ export function Hero() {
             >
               Falar no WhatsApp
             </a>
-          </motion.div>
+          </div>
 
           <div className="grid gap-3 sm:grid-cols-3">
             {badges.map((item) => {
@@ -101,12 +90,7 @@ export function Hero() {
           </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="order-1 hidden flex-1 lg:order-2 lg:block"
-        >
+        <div className="order-1 hidden flex-1 lg:order-2 lg:block">
           <BeforeAfterSlider
             beforeSrc="/imagens/antes_piscina.jpg"
             afterSrc="/imagens/depois_piscina.jpg"
@@ -117,7 +101,7 @@ export function Hero() {
             <span>Antes</span>
             <span>Depois</span>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
