@@ -30,13 +30,23 @@ export function BeforeAfterSlider({
   };
 
   const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+    event.preventDefault();
     (event.currentTarget as HTMLDivElement).setPointerCapture(event.pointerId);
     updateFromClientX(event.clientX);
   };
 
   const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
     if ((event.currentTarget as HTMLDivElement).hasPointerCapture(event.pointerId)) {
+      event.preventDefault();
       updateFromClientX(event.clientX);
+    }
+  };
+
+  const handlePointerUp = (event: React.PointerEvent<HTMLDivElement>) => {
+    if ((event.currentTarget as HTMLDivElement).hasPointerCapture(event.pointerId)) {
+      (event.currentTarget as HTMLDivElement).releasePointerCapture(
+        event.pointerId
+      );
     }
   };
 
@@ -44,13 +54,18 @@ export function BeforeAfterSlider({
     <div className="relative mx-auto select-none w-[calc(100%-2rem)] max-w-[520px] overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-xl backdrop-blur sm:w-full sm:max-w-none">
       <div
         ref={containerRef}
-        className="relative h-[220px] w-full sm:h-[300px] lg:h-[420px]"
+        className="relative h-[220px] w-full touch-none sm:h-[300px] lg:h-[420px]"
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+        onPointerCancel={handlePointerUp}
       >
         <Image
           src={afterSrc}
           alt={afterAlt}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 520px"
+          quality={70}
           className="object-cover"
           priority
         />
@@ -63,6 +78,7 @@ export function BeforeAfterSlider({
             alt={beforeAlt}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 520px"
+            quality={70}
             className="object-cover"
           />
         </div>
@@ -81,6 +97,8 @@ export function BeforeAfterSlider({
             tabIndex={0}
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            onPointerCancel={handlePointerUp}
           >
             Antes
           </div>

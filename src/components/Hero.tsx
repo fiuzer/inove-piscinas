@@ -21,6 +21,7 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
+          quality={60}
           className="object-cover opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[rgba(0,29,61,0.35)] via-[rgba(0,29,61,0.2)] to-transparent sm:from-[var(--brand-deep)] sm:via-[rgba(0,29,61,0.75)]" />

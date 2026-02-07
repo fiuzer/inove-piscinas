@@ -71,6 +71,8 @@ export function Gallery() {
                 fill
                 className="object-cover transition duration-500 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                quality={60}
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-70 transition group-hover:opacity-90" />
               <span className="absolute bottom-4 left-4 text-sm font-semibold text-white">
@@ -84,25 +86,34 @@ export function Gallery() {
       <AnimatePresence>
         {selected ? (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelected(null)}
           >
             <motion.div
-              className="relative h-[70vh] w-full max-w-4xl overflow-hidden rounded-3xl bg-black"
+              className="relative h-[90vh] w-full max-w-4xl overflow-hidden rounded-3xl bg-black"
               initial={{ scale: 0.95 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.95 }}
               onClick={(event) => event.stopPropagation()}
             >
+              <button
+                type="button"
+                className="absolute right-4 top-4 z-10 flex size-12 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-black"
+                onClick={() => setSelected(null)}
+                aria-label="Fechar imagem"
+              >
+                <span className="text-2xl leading-none">×</span>
+              </button>
               <Image
                 src={selected.src}
                 alt={selected.alt}
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="100vw"
+                quality={70}
               />
             </motion.div>
           </motion.div>

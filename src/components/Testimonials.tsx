@@ -92,14 +92,14 @@ export function Testimonials() {
             </motion.div>
           </AnimatePresence>
 
-          <div className="mt-8 flex items-center justify-center gap-2">
+          <div className="mt-8 flex items-center justify-center gap-3">
             {testimonials.map((item, idx) => (
               <button
                 key={item.name}
                 type="button"
                 onClick={() => setIndex(idx)}
-                className={`h-2.5 rounded-full transition ${
-                  idx === index ? "w-10 bg-[var(--brand)]" : "w-2.5 bg-slate-300"
+                className={`h-4 rounded-full transition ${
+                  idx === index ? "w-12 bg-[var(--brand)]" : "w-4 bg-slate-300"
                 }`}
                 aria-label={`Ver depoimento de ${item.name}`}
               />
