@@ -15,19 +15,19 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: {
-    default: "Inove Piscinas | Reforma e manutenção de piscinas no RJ",
+    default: "Inove Piscinas | Reforma de piscinas no RJ",
     template: "%s | Inove Piscinas",
   },
   description:
-    "Reforma, pintura e manutenção de piscinas de fibra e alvenaria no Rio de Janeiro e Niterói. Atendimento rápido, garantia e equipe especializada.",
-  metadataBase: new URL("https://www.inovepiscinas.com.br"),
+    "Reforma e pintura de piscinas de fibra no Rio de Janeiro e Niterói. Atendimento rápido, garantia e equipe especializada.",
+  metadataBase: new URL("https://www.inovepiscinas.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Inove Piscinas | Reforma e manutenção de piscinas no RJ",
+    title: "Inove Piscinas | Reforma de piscinas no RJ",
     description:
-      "Especialistas em reforma, pintura e manutenção de piscinas. Orçamento rápido via WhatsApp.",
+      "Especialistas em reforma e pintura de piscinas. Orçamento rápido via WhatsApp.",
     type: "website",
     locale: "pt_BR",
     url: "/",

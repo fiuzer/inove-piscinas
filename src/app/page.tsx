@@ -9,9 +9,9 @@ import { WaveDivider } from "@/components/WaveDivider";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Reforma e Manutenção de Piscinas no RJ",
+  title: "Inove Piscinas - Reforma de Piscinas no RJ",
   description:
-    "Especialistas em reforma, pintura e manutenção de piscinas de fibra e alvenaria no Rio de Janeiro e Niterói.",
+    "Especialistas em reforma e pintura de piscinas de fibra no Rio de Janeiro e Niterói.",
 };
 
 export default function Home() {

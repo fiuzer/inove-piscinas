@@ -7,7 +7,7 @@ import { BeforeAfterSlider } from "./BeforeAfterSlider";
 const badges = [
   { icon: ShieldCheck, label: "Garantia de serviço" },
   { icon: Wrench, label: "Equipe especializada" },
-  { icon: Star, label: "Avaliação 4.9/5" },
+  { icon: Star, label: "Referência no mercado" },
 ];
 
 export function Hero() {
@@ -49,8 +49,8 @@ export function Hero() {
               </div>
             </div>
             <p className="text-base text-white/80 sm:text-lg">
-              Reforma, pintura e manutenção de piscinas de fibra e alvenaria no
-              Rio de Janeiro e Niterói. Atendimento rápido, orçamento claro e execução com garantia.
+              Há mais de 10 anos sendo referência em reforma, conserto e pintura de piscina de fibra no Rio de Janeiro e Niterói.
+              Atendimento rápido, orçamento claro e execução com garantia.
             </p>
           </div>
 
@@ -59,7 +59,7 @@ export function Hero() {
               href="https://wa.me/5521993739579?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20seu%20site%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[var(--brand-deep)] shadow-lg transition hover:-translate-y-0.5 hover:bg-white/90"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-extrabold text-[var(--brand-deep)] shadow-lg transition hover:-translate-y-0.5 hover:bg-white/90"
               onClick={() => {
                 if (typeof window !== "undefined") {
                   (window as typeof window & { dataLayer?: Array<Record<string, unknown>> })
