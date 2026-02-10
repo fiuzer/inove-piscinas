@@ -89,7 +89,7 @@ export function BeforeAfterSlider({
         >
           <div className="h-full w-1 -translate-x-1/2 bg-white/70" />
           <div
-            className="absolute left-1/2 top-1/2 flex size-16 -translate-x-1/2 -translate-y-1/2 cursor-grab select-none items-center justify-center rounded-full border border-white/40 bg-white/90 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--brand-deep)] shadow-lg active:cursor-grabbing"
+            className="absolute left-1/2 top-1/2 flex size-12 -translate-x-1/2 -translate-y-1/2 cursor-grab select-none items-center justify-center rounded-full border border-white/40 bg-white/90 text-[8px] font-semibold uppercase tracking-[0.12em] text-[var(--brand-deep)] shadow-lg active:cursor-grabbing"
             role="slider"
             aria-label="Arraste para comparar"
             aria-valuemin={0}
@@ -157,13 +157,8 @@ export function BeforeAfterSlider({
         </div>
       </div>
 
-      <div className="flex items-center gap-4 px-4 py-3 sm:px-6 sm:py-4">
-        <label
-          htmlFor={id}
-          className="text-sm font-semibold text-white"
-        >
-          Ajuste o comparativo
-        </label>
+      <div className="hidden">
+        <label htmlFor={id}>Ajuste o comparativo</label>
         <input
           id={id}
           type="range"
@@ -171,7 +166,6 @@ export function BeforeAfterSlider({
           max={100}
           value={value}
           onChange={(event) => setValue(Number(event.target.value))}
-          className="w-full accent-white"
           aria-label="Controle do antes e depois"
         />
       </div>
