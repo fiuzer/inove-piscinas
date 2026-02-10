@@ -2,12 +2,10 @@
 
 import { motion } from "framer-motion";
 import {
-  Droplets,
   Brush,
-  Wrench,
-  Waves,
-  Sparkles,
+  Droplets,
   ShieldCheck,
+  Wrench
 } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
@@ -15,7 +13,7 @@ const services = [
   {
     title: "Reforma de Piscina de Fibra",
     description:
-      "Recuperação estrutural, polimento e revitalização completa para devolver o brilho original.",
+      "Conserto de fissura, furo e revitalização de pintura completa para devolver o brilho original.",
     icon: Droplets,
   },
   {

@@ -50,7 +50,7 @@ export function Testimonials() {
     <section id="avaliacoes" className="bg-white py-12 sm:py-16">
       <div className="mx-auto max-w-5xl px-6">
         <SectionHeading
-          eyebrow="Prova social"
+          eyebrow="Depoimentos"
           title="Quem contrata, aprova"
           description="Avaliações reais de clientes no Google."
           align="center"

@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -140,6 +140,46 @@ export function ContactSection() {
                   <p className="font-semibold">Horário</p>
                   <p className="text-white/80">Segunda a sábado • 8h às 20h</p>
                 </div>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-sm font-semibold">Redes sociais</p>
+              <div className="mt-3 flex items-center gap-3">
+                <a
+                  href="https://www.tiktok.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                  aria-label="TikTok"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    className="size-5 -translate-x-0.5"
+                    fill="currentColor"
+                  >
+                    <path d="M18.5 4.2c-.9-1-1.4-2.2-1.4-3.6h-3.1v12.2c0 1.1-.9 2-2 2s-2-.9-2-2 0-2 2-2c.3 0 .6.1.9.2V7.5c-.3 0-.6-.1-.9-.1-2.9 0-5.2 2.3-5.2 5.2s2.3 5.2 5.2 5.2 5.2-2.3 5.2-5.2V8.6c1 .7 2.2 1.1 3.6 1.1V6.6c-1.1 0-2.1-.5-2.8-1.4z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="size-5" />
+                </a>
+                <a
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="size-5" />
+                </a>
               </div>
             </div>
           </div>

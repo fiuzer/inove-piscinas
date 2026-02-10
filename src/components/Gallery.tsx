@@ -52,7 +52,7 @@ export function Gallery() {
         <SectionHeading
           eyebrow="Projetos"
           title="Resultados que falam por si"
-          description="Uma seleção de reformas e manutenções entregues com alto padrão de acabamento."
+          description="Uma seleção de apenas algumas de nossas reformas entregues no Rio de Janeiro e Niterói."
         />
 
         <div className="mt-8 grid gap-4 md:grid-cols-4 md:auto-rows-[180px]">

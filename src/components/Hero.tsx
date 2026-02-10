@@ -29,17 +29,20 @@ export function Hero() {
       <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px pb-20 pt-14 lg:flex-row lg:items-center lg:gap-16 lg:pb-28 lg:pt-20">
         <div className="order-2 flex-1 space-y-5 px-4 text-center sm:px-6 sm:text-left lg:order-1 lg:px-0 lg:text-left">
           <div className="space-y-4">
-            <p className="text-xl font-semibold uppercase tracking-[0.2em] text-white">
+            <p className="text-xl font-semibold uppercase tracking-[0.2em] text-gray-200/90">
               Sua piscina está desbotada?
             </p>
             <h1 className="font-heading text font-semibold leading-tight text-4xl sm:text-5xl lg:text-6xl">
-              Somos especialistas em reforma de{" "}
-              <span className="whitespace-nowrap">piscina de fibra!</span>
+              <span className="whitespace-nowrap">Somos especialistas</span>
+              <br />
+              em reforma de
+              <br />
+              piscina de fibra
             </h1>
             <div className="mt-6 lg:hidden">
               <BeforeAfterSlider
-                beforeSrc="/imagens/antespiscina.jpg"
-                afterSrc="/imagens/depoispiscina.jpg"
+                beforeSrc="/imagens/depoispiscina.jpg"
+                afterSrc="/imagens/antespiscina.jpg"
                 beforeAlt="Piscina antes da reforma"
                 afterAlt="Piscina depois da reforma"
               />
@@ -48,7 +51,7 @@ export function Hero() {
                 <span>Depois</span>
               </div>
             </div>
-            <p className="text-base text-white/90 sm:text-lg">
+            <p className="text-base text-gray-200 sm:text-lg">
               Há mais de 10 anos sendo referência em reforma, conserto e pintura de piscina de fibra no Rio de Janeiro e Niterói.
               Atendimento rápido, orçamento claro e execução com garantia.
             </p>
@@ -95,8 +98,8 @@ export function Hero() {
 
         <div className="order-1 hidden flex-1 lg:order-2 lg:block">
           <BeforeAfterSlider
-            beforeSrc="/imagens/antespiscina.jpg"
-            afterSrc="/imagens/depoispiscina.jpg"
+            beforeSrc="/imagens/depoispiscina.jpg"
+            afterSrc="/imagens/antespiscina.jpg"
             beforeAlt="Piscina antes da reforma"
             afterAlt="Piscina depois da reforma"
           />
@@ -105,9 +108,8 @@ export function Hero() {
             <span>Depois</span>
           </div>
         </div>
+
       </div>
     </section>
   );
 }
-
-
