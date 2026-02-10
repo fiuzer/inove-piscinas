@@ -38,8 +38,8 @@ export function Hero() {
             </h1>
             <div className="mt-6 lg:hidden">
               <BeforeAfterSlider
-                beforeSrc="/imagens/antes_piscina.jpg"
-                afterSrc="/imagens/depois_piscina.jpg"
+                beforeSrc="/imagens/antespiscina.jpg"
+                afterSrc="/imagens/depoispiscina.jpg"
                 beforeAlt="Piscina antes da reforma"
                 afterAlt="Piscina depois da reforma"
               />
@@ -95,8 +95,8 @@ export function Hero() {
 
         <div className="order-1 hidden flex-1 lg:order-2 lg:block">
           <BeforeAfterSlider
-            beforeSrc="/imagens/antes_piscina.jpg"
-            afterSrc="/imagens/depois_piscina.jpg"
+            beforeSrc="/imagens/antespiscina.jpg"
+            afterSrc="/imagens/depoispiscina.jpg"
             beforeAlt="Piscina antes da reforma"
             afterAlt="Piscina depois da reforma"
           />
@@ -109,6 +109,5 @@ export function Hero() {
     </section>
   );
 }
-
 
 
