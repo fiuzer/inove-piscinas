@@ -56,7 +56,7 @@ export function Services() {
           eyebrow="Serviços"
           title="Reforma rápida, durável e com garantia de quem entende"
           description="Soluções completas para reforma e pintura com foco em segurança e performance."
-          align="center"
+          align="left"
         />
 
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

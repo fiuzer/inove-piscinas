@@ -48,12 +48,12 @@ export function Testimonials() {
 
   return (
     <section id="avaliacoes" className="bg-white py-12 sm:py-16">
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="Depoimentos"
           title="Quem contrata, aprova"
           description="Avaliações reais de clientes no Google."
-          align="center"
+          align="left"
         />
 
         <div className="mt-8 rounded-3xl border border-slate-100 bg-slate-50 p-8 shadow-lg sm:p-10">
@@ -110,4 +110,3 @@ export function Testimonials() {
     </section>
   );
 }
-

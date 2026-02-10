@@ -53,6 +53,7 @@ export function Gallery() {
           eyebrow="Projetos"
           title="Resultados que falam por si"
           description="Uma seleção de apenas algumas de nossas reformas entregues no Rio de Janeiro e Niterói."
+          align="left"
         />
 
         <div className="mt-8 grid gap-4 md:grid-cols-4 md:auto-rows-[180px]">
