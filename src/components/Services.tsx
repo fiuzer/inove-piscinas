@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import {
@@ -19,9 +19,9 @@ const services = [
     icon: Droplets,
   },
   {
-    title: "Pintura Profissional",
+    title: "Pintura de Piscina de Fibra",
     description:
-      "Tintas e materiais resistentes ao cloro e ao sol, garantindo durabilidade e acabamento premium.",
+      "Pintura profissional com materiais resistentes ao cloro e ao sol, garantindo durabilidade e acabamento premium.",
     icon: Brush,
   },
   {
@@ -30,22 +30,22 @@ const services = [
       "Troca de tubulações, filtros e registros com equipe experiente e soluções rápidas.",
     icon: Wrench,
   },
+  // {
+  //   title: "Rejuntamento & Reparos",
+  //   description:
+  //     "Correção de vazamentos e trincas com materiais de alta performance.",
+  //   icon: Waves,
+  // },
+  // {
+  //   title: "Tratamento e Limpeza",
+  //   description:
+  //     "Controle químico e higienização completa para água cristalina o ano inteiro.",
+  //   icon: Sparkles,
+  // },
   {
-    title: "Rejuntamento & Reparos",
+    title: "Garantia de Serviços",
     description:
-      "Correção de vazamentos e trincas com materiais de alta performance.",
-    icon: Waves,
-  },
-  {
-    title: "Tratamento e Limpeza",
-    description:
-      "Controle químico e higienização completa para água cristalina o ano inteiro.",
-    icon: Sparkles,
-  },
-  {
-    title: "Garantia e Pós-obra",
-    description:
-      "Acompanhamento após o serviço para garantir resultado impecável.",
+      "Sua tranquilidade é nossa prioridade. Oferecemos garantia em todos os projetos de revitalização.",
     icon: ShieldCheck,
   },
 ];
@@ -56,8 +56,8 @@ export function Services() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="Serviços"
-          title="Tudo o que sua piscina precisa, em um só lugar"
-          description="Soluções completas para reforma, pintura e manutenção com foco em segurança e performance."
+          title="Reforma rápida, durável e com garantia de quem entende"
+          description="Soluções completas para reforma e pintura com foco em segurança e performance."
           align="center"
         />
 

@@ -15,7 +15,7 @@ export function Hero() {
     <section className="relative isolate overflow-hidden bg-[var(--brand-deep)] pt-8 text-white sm:pt-12">
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1543489822-c49534f3271f?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="/imagens/piscina_fundo.jpg"
           alt="Piscina com vista ao entardecer"
           fill
           priority
@@ -23,13 +23,13 @@ export function Hero() {
           quality={60}
           className="object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(0,29,61,0.35)] via-[rgba(0,29,61,0.2)] to-transparent sm:from-[var(--brand-deep)] sm:via-[rgba(0,29,61,0.75)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-deep)] via-[rgba(0,29,61,0.75)] to-transparent sm:from-[var(--brand-deep)] sm:via-[rgba(0,29,61,0.75)]" />
       </div>
 
       <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px pb-20 pt-14 lg:flex-row lg:items-center lg:gap-16 lg:pb-28 lg:pt-20">
         <div className="order-2 flex-1 space-y-5 px-4 text-center sm:px-6 sm:text-left lg:order-1 lg:px-0 lg:text-left">
           <div className="space-y-4">
-            <p className="text-xl font-semibold uppercase tracking-[0.2em] text-white/80">
+            <p className="text-xl font-semibold uppercase tracking-[0.2em] text-white">
               Sua piscina está desbotada?
             </p>
             <h1 className="font-heading text font-semibold leading-tight text-4xl sm:text-5xl lg:text-6xl">
@@ -48,7 +48,7 @@ export function Hero() {
                 <span>Depois</span>
               </div>
             </div>
-            <p className="text-base text-white/80 sm:text-lg">
+            <p className="text-base text-white/90 sm:text-lg">
               Há mais de 10 anos sendo referência em reforma, conserto e pintura de piscina de fibra no Rio de Janeiro e Niterói.
               Atendimento rápido, orçamento claro e execução com garantia.
             </p>
@@ -109,8 +109,6 @@ export function Hero() {
     </section>
   );
 }
-
-
 
 
 
