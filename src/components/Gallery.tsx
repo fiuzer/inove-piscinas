@@ -5,35 +5,46 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { SectionHeading } from "./SectionHeading";
 
-const gallery = [
+const projects = [
   {
-    src: "/imagens/piscina-1.jpg",
-    alt: "Piscina residencial com iluminação azul",
+    id: 1,
+    before: "/imagens/piscina-antes1.jpg",
+    after: "/imagens/piscina-depois1.jpg",
+    alt: "Projeto 01",
     className: "md:col-span-2 md:row-span-2",
   },
   {
-    src: "/imagens/piscina-2.jpg",
-    alt: "Detalhe de borda de piscina renovada",
+    id: 2,
+    before: "/imagens/piscina-antes2.jpg",
+    after: "/imagens/piscina-depois2.jpg",
+    alt: "Projeto 02",
   },
   {
-    src: "/imagens/piscina-3.jpg",
-    alt: "Piscina pronta para uso",
+    id: 3,
+    before: "/imagens/piscina-antes3.jpg",
+    after: "/imagens/piscina-depois3.jpg",
+    alt: "Projeto 03",
   },
   {
-    src: "/imagens/piscina-4.jpg",
-    alt: "Manutenção técnica em piscina",
+    id: 4,
+    before: "/imagens/piscina-antes4.jpg",
+    after: "/imagens/piscina-depois4.jpg",
+    alt: "Projeto 04",
   },
   {
-    src: "/imagens/piscina-5.jpg",
-    alt: "Área de lazer com piscina revitalizada",
+    id: 5,
+    before: "/imagens/piscina-antes5.jpg",
+    after: "/imagens/piscina-depois5.jpg",
+    alt: "Projeto 05",
     className: "md:col-span-2",
   },
 ];
 
 export function Gallery() {
-  const [selected, setSelected] = useState<(typeof gallery)[number] | null>(
+  const [selected, setSelected] = useState<(typeof projects)[number] | null>(
     null
   );
+  const [view, setView] = useState<"before" | "after">("after");
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -57,9 +68,9 @@ export function Gallery() {
         />
 
         <div className="mt-8 grid gap-4 md:grid-cols-4 md:auto-rows-[180px]">
-          {gallery.map((item) => (
+          {projects.map((item) => (
             <button
-              key={item.src}
+              key={item.id}
               type="button"
               onClick={() => setSelected(item)}
               className={`group relative h-52 overflow-hidden rounded-3xl md:h-full ${
@@ -67,7 +78,7 @@ export function Gallery() {
               }`}
             >
               <Image
-                src={item.src}
+                src={item.after}
                 alt={item.alt}
                 fill
                 className="object-cover transition duration-500 group-hover:scale-105"
@@ -77,7 +88,7 @@ export function Gallery() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-70 transition group-hover:opacity-90" />
               <span className="absolute bottom-4 left-4 text-sm font-semibold text-white">
-                Ver projeto
+                Ver antes e depois
               </span>
             </button>
           ))}
@@ -94,7 +105,7 @@ export function Gallery() {
             onClick={() => setSelected(null)}
           >
             <motion.div
-              className="relative h-[90vh] w-full max-w-4xl overflow-hidden rounded-3xl bg-black"
+              className="relative h-[90vh] w-full max-w-5xl overflow-hidden rounded-3xl bg-black"
               initial={{ scale: 0.95 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.95 }}
@@ -108,14 +119,46 @@ export function Gallery() {
               >
                 <span className="text-2xl leading-none">×</span>
               </button>
-              <Image
-                src={selected.src}
-                alt={selected.alt}
-                fill
-                className="object-contain"
-                sizes="100vw"
-                quality={70}
-              />
+
+              <div className="flex h-full flex-col items-center justify-center gap-4 bg-black/90 p-6">
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setView("before")}
+                    className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-widest transition ${
+                      view === "before"
+                        ? "bg-white text-[var(--brand-deep)]"
+                        : "bg-white/10 text-white hover:bg-white/20"
+                    }`}
+                  >
+                    Antes
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setView("after")}
+                    className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-widest transition ${
+                      view === "after"
+                        ? "bg-white text-[var(--brand-deep)]"
+                        : "bg-white/10 text-white hover:bg-white/20"
+                    }`}
+                  >
+                    Depois
+                  </button>
+                </div>
+
+                <div className="relative h-full w-full max-w-4xl flex-1 overflow-hidden rounded-2xl">
+                  <Image
+                    src={view === "before" ? selected.before : selected.after}
+                    alt={`${selected.alt} - ${
+                      view === "before" ? "Antes" : "Depois"
+                    }`}
+                    fill
+                    className="object-contain"
+                    sizes="100vw"
+                    quality={70}
+                  />
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         ) : null}
