@@ -38,6 +38,12 @@ const projects = [
     alt: "Projeto 05",
     className: "md:col-span-2",
   },
+  {
+    id: 6,
+    before: "/imagens/piscina-antes6.jpg",
+    after: "/imagens/piscina-depois6.jpg",
+    alt: "Projeto 06",
+  },
 ];
 
 export function Gallery() {
@@ -72,7 +78,10 @@ export function Gallery() {
             <button
               key={item.id}
               type="button"
-              onClick={() => setSelected(item)}
+              onClick={() => {
+                setSelected(item);
+                setView("after");
+              }}
               className={`group relative h-52 overflow-hidden rounded-3xl md:h-full ${
                 item.className ?? ""
               }`}
