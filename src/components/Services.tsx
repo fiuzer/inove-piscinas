@@ -61,7 +61,7 @@ export function Services() {
             const Icon = service.icon;
             return (
               <div
-                key={service.title}}}}}
+                key={service.title}
                 className="group rounded-3xl border border-slate-100 bg-white p-6 shadow-md transition hover:-translate-y-1 hover:border-[var(--brand)] hover:shadow-xl"
               >
                 <div className="flex size-12 items-center justify-center rounded-2xl bg-[var(--brand)]/10 text-[var(--brand)] transition group-hover:bg-[var(--brand)] group-hover:text-white">
@@ -81,6 +81,7 @@ export function Services() {
     </section>
   );
 }
+
 
 
 

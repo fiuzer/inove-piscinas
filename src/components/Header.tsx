@@ -57,7 +57,7 @@ export function Header() {
                 alt="Inove Piscinas"
                 fill
                 className="object-contain"
-                sizes="(max-width: 768px) 120px, 180px"\r\n              />
+                sizes="(max-width: 768px) 120px, 180px" />
             </span>
           </a>
 
@@ -85,8 +85,7 @@ export function Header() {
           </button>
         </div>
       </div>
-
-            {open ? (
+      {open ? (
         <div className="md:hidden">
           <div className="mx-6 rounded-2xl bg-white/95 p-6 text-[var(--brand-deep)] shadow-xl backdrop-blur">
             <div className="flex flex-col gap-4 text-sm font-semibold">
@@ -113,6 +112,9 @@ export function Header() {
     </header>
   );
 }
+
+
+
 
 
 
