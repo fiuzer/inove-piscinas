@@ -66,8 +66,7 @@ export function BeforeAfterSlider({
           fill
           sizes="(max-width: 480px) 90vw, (max-width: 768px) 80vw, 520px"
           quality={45}
-          priority
-          fetchPriority="high"
+          loading="lazy"
           className="object-cover"
         />
         <div
@@ -80,6 +79,7 @@ export function BeforeAfterSlider({
             fill
             sizes="(max-width: 480px) 90vw, (max-width: 768px) 80vw, 520px"
             quality={45}
+            loading="lazy"
             className="object-cover"
           />
         </div>

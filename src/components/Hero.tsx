@@ -41,15 +41,17 @@ export function Hero() {
               piscina de fibra
             </h1>
             <div className="mt-6 lg:hidden">
-              <BeforeAfterSlider
-                beforeSrc="/imagens/depoispiscina.jpg"
-                afterSrc="/imagens/antespiscina.jpg"
-                beforeAlt="Piscina antes da reforma"
-                afterAlt="Piscina depois da reforma"
-              />
-              <div className="mt-4 flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/70">
-                <span>Antes</span>
-                <span>Depois</span>
+              <div className="relative h-[240px] w-full overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-xl backdrop-blur">
+                <Image
+                  src="/imagens/depoispiscina.jpg"
+                  alt="Piscina depois da reforma"
+                  fill
+                  sizes="100vw"
+                  quality={60}
+                  priority
+                  fetchPriority="high"
+                  className="object-cover"
+                />
               </div>
             </div>
             <p className="text-base text-gray-200 sm:text-lg">
