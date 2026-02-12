@@ -2,6 +2,7 @@
 
 import { ArrowRight, ShieldCheck, Star, Wrench } from "lucide-react";
 import Image from "next/image";
+import heroBg from "@/public/imagens/piscina_fundo.jpg";
 import { BeforeAfterSlider } from "./BeforeAfterSlider";
 
 const badges = [
@@ -15,12 +16,14 @@ export function Hero() {
     <section className="relative isolate overflow-hidden bg-[var(--brand-deep)] pt-8 text-white sm:pt-12">
       <div className="absolute inset-0">
         <Image
-          src="/imagens/piscina_fundo.jpg"
+          src={heroBg}
           alt="Piscina com vista ao entardecer"
           fill
           priority
-          sizes="100vw"
-          quality={60}
+          fetchPriority="high"
+          sizes="(max-width: 768px) 100vw, 1200px"
+          quality={45}
+          placeholder="blur"
           className="object-cover opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-deep)] via-[rgba(0,29,61,0.75)] to-transparent sm:from-[var(--brand-deep)] sm:via-[rgba(0,29,61,0.75)]" />
