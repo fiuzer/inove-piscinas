@@ -2,8 +2,18 @@
 
 import { ArrowRight, ShieldCheck, Star, Wrench } from "lucide-react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import heroBg from "../../public/imagens/piscina_fundo.jpg";
-import { BeforeAfterSlider } from "./BeforeAfterSlider";
+
+const BeforeAfterSlider = dynamic(
+  () => import("./BeforeAfterSlider").then((mod) => mod.BeforeAfterSlider),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-[420px] w-full max-w-[520px] rounded-2xl border border-white/20 bg-white/10 shadow-xl backdrop-blur" />
+    ),
+  }
+);
 
 const badges = [
   { icon: ShieldCheck, label: "Garantia de serviço" },

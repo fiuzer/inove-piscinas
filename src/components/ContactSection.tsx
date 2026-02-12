@@ -84,7 +84,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contato" className="relative -mt-px bg-[var(--brand-deep)] py-12 sm:py-16">
+    <section id="contato" className="relative -mt-px bg-[var(--brand-deep)] py-12 sm:py-16 cv-auto">
       <div className="mx-auto max-w-6xl px-6 text-white">
         <SectionHeading
           eyebrow="Contato"

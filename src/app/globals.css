@@ -9,6 +9,11 @@
   --muted: #5b6b7a;
 }
 
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

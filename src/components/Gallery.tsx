@@ -64,7 +64,7 @@ export function Gallery() {
   }, []);
 
   return (
-    <section id="projetos" className="bg-slate-50 py-12 sm:py-16">
+    <section id="projetos" className="bg-slate-50 py-12 sm:py-16 cv-auto">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="Projetos"

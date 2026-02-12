@@ -47,7 +47,7 @@ export function Testimonials() {
   }, [total]);
 
   return (
-    <section id="avaliacoes" className="bg-white py-12 sm:py-16">
+    <section id="avaliacoes" className="bg-white py-12 sm:py-16 cv-auto">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="Depoimentos"
