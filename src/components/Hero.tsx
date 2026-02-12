@@ -19,8 +19,6 @@ export function Hero() {
           src={heroBg}
           alt="Piscina com vista ao entardecer"
           fill
-          priority
-          fetchPriority="high"
           sizes="(max-width: 768px) 100vw, 1200px"
           quality={45}
           placeholder="blur"
@@ -116,3 +114,4 @@ export function Hero() {
     </section>
   );
 }
+

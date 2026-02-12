@@ -1,7 +1,4 @@
-﻿"use client";
-
-import { motion } from "framer-motion";
-import {
+﻿import {
   Brush,
   Droplets,
   ShieldCheck,
@@ -60,15 +57,11 @@ export function Services() {
         />
 
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => {
+          {services.map((service) => {
             const Icon = service.icon;
             return (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
+              <div
+                key={service.title}}}}}
                 className="group rounded-3xl border border-slate-100 bg-white p-6 shadow-md transition hover:-translate-y-1 hover:border-[var(--brand)] hover:shadow-xl"
               >
                 <div className="flex size-12 items-center justify-center rounded-2xl bg-[var(--brand)]/10 text-[var(--brand)] transition group-hover:bg-[var(--brand)] group-hover:text-white">
@@ -80,7 +73,7 @@ export function Services() {
                 <p className="mt-2 text-sm text-[var(--muted)]">
                   {service.description}
                 </p>
-              </motion.div>
+              </div>
             );
           })}
         </div>
@@ -88,3 +81,6 @@ export function Services() {
     </section>
   );
 }
+
+
+

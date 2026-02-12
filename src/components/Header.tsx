@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const links = [
@@ -58,9 +57,7 @@ export function Header() {
                 alt="Inove Piscinas"
                 fill
                 className="object-contain"
-                sizes="(max-width: 768px) 120px, 180px"
-                priority
-              />
+                sizes="(max-width: 768px) 120px, 180px"\r\n              />
             </span>
           </a>
 
@@ -89,37 +86,33 @@ export function Header() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {open ? (
-          <motion.div
-            className="md:hidden"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-          >
-            <div className="mx-6 rounded-2xl bg-white/95 p-6 text-[var(--brand-deep)] shadow-xl backdrop-blur">
-              <div className="flex flex-col gap-4 text-sm font-semibold">
-                {links.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                ))}
+            {open ? (
+        <div className="md:hidden">
+          <div className="mx-6 rounded-2xl bg-white/95 p-6 text-[var(--brand-deep)] shadow-xl backdrop-blur">
+            <div className="flex flex-col gap-4 text-sm font-semibold">
+              {links.map((link) => (
                 <a
-                  href="#contato"
+                  key={link.href}
+                  href={link.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-full bg-[var(--brand)] px-5 py-3 text-center text-xs font-semibold uppercase tracking-widest text-white shadow-lg"
                 >
-                  Peça seu orçamento
+                  {link.label}
                 </a>
-              </div>
+              ))}
+              <a
+                href="#contato"
+                onClick={() => setOpen(false)}
+                className="rounded-full bg-[var(--brand)] px-5 py-3 text-center text-xs font-semibold uppercase tracking-widest text-white shadow-lg"
+              >
+                Peça seu orçamento
+              </a>
             </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+          </div>
+        </div>
+      ) : null}
     </header>
   );
 }
+
+
+

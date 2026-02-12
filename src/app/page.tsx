@@ -1,17 +1,14 @@
-import { ContactSection } from "@/components/ContactSection";
-import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
-import { Gallery } from "@/components/Gallery";
-import { Header } from "@/components/Header";
+﻿import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
-import { Testimonials } from "@/components/Testimonials";
+import { DeferredSections } from "@/components/DeferredSections";
 import { WaveDivider } from "@/components/WaveDivider";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Inove Piscinas - Reforma de Piscinas no RJ",
   description:
-    "Especialistas em reforma e pintura de piscinas de fibra no Rio de Janeiro e Niterói.",
+    "Especialistas em reforma e pintura de piscinas de fibra no Rio de Janeiro e NiterÃ³i.",
 };
 
 export default function Home() {
@@ -22,14 +19,14 @@ export default function Home() {
     image:
       "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
-      "Reforma, pintura e manutenção de piscinas de fib ra e alvenaria no Rio de Janeiro e Niterói.",
+      "Reforma, pintura e manutenÃ§Ã£o de piscinas de fib ra e alvenaria no Rio de Janeiro e NiterÃ³i.",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Rio de Janeiro",
       addressRegion: "RJ",
       addressCountry: "BR",
     },
-    areaServed: ["Rio de Janeiro", "Niterói"],
+    areaServed: ["Rio de Janeiro", "NiterÃ³i"],
     telephone: "+55 21 99373-9579",
     url: "https://www.inovepiscinas.com",
     priceRange: "$$",
@@ -47,20 +44,14 @@ export default function Home() {
       <Hero />
       <WaveDivider flip />
       <Services />
-      <WaveDivider />
-      <Gallery />
-      <WaveDivider flip />
-      <Testimonials />
-      <WaveDivider variant="dark" flip className="bg-white" />
-      <ContactSection />
-      <FloatingWhatsApp />
+      <DeferredSections />
 
       <footer className="bg-[var(--brand-deep)] py-10 text-sm text-white/70">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 md:flex-row">
-          <p>© 2026 Inove Piscinas. Todos os direitos reservados.</p>
+          <p>Â© 2026 Inove Piscinas. Todos os direitos reservados.</p>
           <div className="flex items-center gap-6">
             <a href="#servicos" className="hover:text-white">
-              Serviços
+              ServiÃ§os
             </a>
             <a href="#projetos" className="hover:text-white">
               Projetos
@@ -74,3 +65,6 @@ export default function Home() {
     </main>
   );
 }
+
+
+
