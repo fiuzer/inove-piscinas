@@ -2,7 +2,7 @@
 
 import { ArrowRight, ShieldCheck, Star, Wrench } from "lucide-react";
 import Image from "next/image";
-import heroBg from "@/public/imagens/piscina_fundo.jpg";
+import heroBg from "../../public/imagens/piscina_fundo.jpg";
 import { BeforeAfterSlider } from "./BeforeAfterSlider";
 
 const badges = [
