@@ -19,10 +19,10 @@ export function Hero() {
           src={heroBg}
           alt="Piscina com vista ao entardecer"
           fill
-          sizes="(max-width: 768px) 100vw, 1200px"
-          quality={45}
+          sizes="(max-width: 1200px) 100vw, 1200px"
+          quality={40}
           placeholder="blur"
-          className="object-cover opacity-50"
+          className="hidden object-cover opacity-50 sm:block"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-deep)] via-[rgba(0,29,61,0.75)] to-transparent sm:from-[var(--brand-deep)] sm:via-[rgba(0,29,61,0.75)]" />
       </div>
