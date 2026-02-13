@@ -34,17 +34,25 @@ const testimonials = [
 
 export function Testimonials() {
   const [index, setIndex] = useState(0);
+  const [expanded, setExpanded] = useState(false);
   const total = testimonials.length;
 
   const current = useMemo(() => testimonials[index], [index]);
+  const canExpand = current.text.length > 180;
 
   useEffect(() => {
+    if (expanded) return;
+
     const timer = window.setInterval(() => {
       setIndex((prev) => (prev + 1) % total);
     }, 7000);
 
     return () => window.clearInterval(timer);
-  }, [total]);
+  }, [total, expanded]);
+
+  useEffect(() => {
+    setExpanded(false);
+  }, [index]);
 
   return (
     <section id="avaliacoes" className="bg-white py-12 sm:py-16 cv-auto">
@@ -71,9 +79,47 @@ export function Testimonials() {
                   <Star key={idx} className="size-4 fill-current" />
                 ))}
               </div>
-              <p className="text-lg text-[var(--brand-deep)] sm:text-xl">
-                “{current.text}”
-              </p>
+              <div className="relative">
+                <p
+                  className="text-lg text-[var(--brand-deep)] sm:text-xl"
+                  style={
+                    expanded
+                      ? undefined
+                      : {
+                          display: "-webkit-box",
+                          WebkitLineClamp: 3,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                        }
+                  }
+                >
+                  “{current.text}”
+                </p>
+                {canExpand && !expanded ? (
+                  <>
+                    <div
+                      className="pointer-events-none absolute inset-x-0 bottom-0 h-9 bg-gradient-to-t from-slate-50/95 via-slate-50/60 to-transparent"
+                      aria-hidden="true"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setExpanded(true)}
+                      className="absolute bottom-0 right-0 bg-slate-50/80 pl-2 text-sm font-semibold text-[var(--brand)] backdrop-blur-[1px] transition hover:opacity-80"
+                    >
+                      Ver mais
+                    </button>
+                  </>
+                ) : null}
+              </div>
+              {canExpand && expanded ? (
+                <button
+                  type="button"
+                  onClick={() => setExpanded(false)}
+                  className="text-sm font-semibold text-[var(--brand)] transition hover:opacity-80"
+                >
+                  Ver menos
+                </button>
+              ) : null}
               <div className="flex items-center gap-4">
                 <div className="flex size-12 items-center justify-center rounded-full bg-[var(--brand)] text-white">
                   {current.name
@@ -97,7 +143,10 @@ export function Testimonials() {
               <button
                 key={item.name}
                 type="button"
-                onClick={() => setIndex(idx)}
+                onClick={() => {
+                  setIndex(idx);
+                  setExpanded(false);
+                }}
                 className={`h-4 rounded-full transition ${
                   idx === index ? "w-12 bg-[var(--brand)]" : "w-4 bg-slate-300"
                 }`}
