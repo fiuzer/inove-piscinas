@@ -95,9 +95,7 @@ export function ContactSection() {
           }
           description={
             <>
-              Solicite um orçamento rápido e 100% gratuito
-              <br />
-              com nosso time.
+              Solicite um orçamento rápido e 100% gratuito com nosso time.
             </>
           }
           titleClassName="text-sky-300"

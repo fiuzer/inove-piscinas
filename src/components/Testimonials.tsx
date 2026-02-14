@@ -35,6 +35,7 @@ const testimonials = [
 export function Testimonials() {
   const [index, setIndex] = useState(0);
   const [expanded, setExpanded] = useState(false);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const total = testimonials.length;
 
   const current = useMemo(() => testimonials[index], [index]);
@@ -53,6 +54,35 @@ export function Testimonials() {
   useEffect(() => {
     setExpanded(false);
   }, [index]);
+
+  const goNext = () => {
+    setIndex((prev) => (prev + 1) % total);
+    setExpanded(false);
+  };
+
+  const goPrev = () => {
+    setIndex((prev) => (prev - 1 + total) % total);
+    setExpanded(false);
+  };
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStartX(event.changedTouches[0]?.clientX ?? null);
+  };
+
+  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (touchStartX === null) return;
+    const touchEndX = event.changedTouches[0]?.clientX ?? touchStartX;
+    const deltaX = touchEndX - touchStartX;
+    const swipeThreshold = 40;
+
+    if (deltaX <= -swipeThreshold) {
+      goNext();
+    } else if (deltaX >= swipeThreshold) {
+      goPrev();
+    }
+
+    setTouchStartX(null);
+  };
 
   return (
     <section id="avaliacoes" className="bg-white py-12 sm:py-16 cv-auto">
@@ -73,6 +103,8 @@ export function Testimonials() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.4 }}
               className="space-y-6"
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
             >
               <div className="flex items-center gap-1 text-[var(--brand)]">
                 {Array.from({ length: current.rating }).map((_, idx) => (
