@@ -79,7 +79,7 @@ export function Testimonials() {
                   <Star key={idx} className="size-4 fill-current" />
                 ))}
               </div>
-              <div className="relative">
+              <div className="relative min-h-[5.6rem] sm:min-h-[6.5rem]">
                 <p
                   className="text-lg text-[var(--brand-deep)] sm:text-xl"
                   style={
@@ -111,15 +111,17 @@ export function Testimonials() {
                   </>
                 ) : null}
               </div>
-              {canExpand && expanded ? (
-                <button
-                  type="button"
-                  onClick={() => setExpanded(false)}
-                  className="text-sm font-semibold text-[var(--brand)] transition hover:opacity-80"
-                >
-                  Ver menos
-                </button>
-              ) : null}
+              <div className="min-h-5">
+                {canExpand && expanded ? (
+                  <button
+                    type="button"
+                    onClick={() => setExpanded(false)}
+                    className="text-sm font-semibold text-[var(--brand)] transition hover:opacity-80"
+                  >
+                    Ver menos
+                  </button>
+                ) : null}
+              </div>
               <div className="flex items-center gap-4">
                 <div className="flex size-12 items-center justify-center rounded-full bg-[var(--brand)] text-white">
                   {current.name
