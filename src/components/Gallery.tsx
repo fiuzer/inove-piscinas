@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { SectionHeading } from "./SectionHeading";
 
 const projects = [
@@ -51,8 +52,11 @@ export function Gallery() {
     null
   );
   const [view, setView] = useState<"before" | "after">("after");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setSelected(null);
@@ -62,6 +66,17 @@ export function Gallery() {
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
+
+  useEffect(() => {
+    if (!selected) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [selected]);
 
   return (
     <section id="projetos" className="bg-slate-50 py-12 sm:py-16 cv-auto">
@@ -104,74 +119,79 @@ export function Gallery() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {selected ? (
-          <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelected(null)}
-          >
-            <motion.div
-              className="relative h-[90vh] w-full max-w-5xl overflow-hidden rounded-3xl bg-black"
-              initial={{ scale: 0.95 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.95 }}
-              onClick={(event) => event.stopPropagation()}
-            >
-              <button
-                type="button"
-                className="absolute right-4 top-4 z-10 flex size-12 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-black"
-                onClick={() => setSelected(null)}
-                aria-label="Fechar imagem"
-              >
-                <span className="text-2xl leading-none">×</span>
-              </button>
-
-              <div className="flex h-full flex-col items-center justify-center gap-4 bg-black/90 p-6">
-                <div className="flex items-center gap-3">
-                  <button
-                    type="button"
-                    onClick={() => setView("before")}
-                    className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-widest transition ${
-                      view === "before"
-                        ? "bg-white text-[var(--brand-deep)]"
-                        : "bg-white/10 text-white hover:bg-white/20"
-                    }`}
+      {mounted
+        ? createPortal(
+            <AnimatePresence>
+              {selected ? (
+                <motion.div
+                  className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={() => setSelected(null)}
+                >
+                  <motion.div
+                    className="relative h-[90vh] w-full max-w-5xl overflow-hidden rounded-3xl bg-black"
+                    initial={{ scale: 0.95 }}
+                    animate={{ scale: 1 }}
+                    exit={{ scale: 0.95 }}
+                    onClick={(event) => event.stopPropagation()}
                   >
-                    Antes
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setView("after")}
-                    className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-widest transition ${
-                      view === "after"
-                        ? "bg-white text-[var(--brand-deep)]"
-                        : "bg-white/10 text-white hover:bg-white/20"
-                    }`}
-                  >
-                    Depois
-                  </button>
-                </div>
+                    <button
+                      type="button"
+                      className="absolute right-4 top-4 z-10 flex size-12 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-black"
+                      onClick={() => setSelected(null)}
+                      aria-label="Fechar imagem"
+                    >
+                      <span className="text-2xl leading-none">×</span>
+                    </button>
 
-                <div className="relative h-full w-full max-w-4xl flex-1 overflow-hidden rounded-2xl">
-                  <Image
-                    src={view === "before" ? selected.before : selected.after}
-                    alt={`${selected.alt} - ${
-                      view === "before" ? "Antes" : "Depois"
-                    }`}
-                    fill
-                    className="object-contain"
-                    sizes="100vw"
-                    quality={60}
-                  />
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+                    <div className="flex h-full flex-col items-center justify-center gap-4 bg-black/90 p-6">
+                      <div className="flex items-center gap-3">
+                        <button
+                          type="button"
+                          onClick={() => setView("before")}
+                          className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-widest transition ${
+                            view === "before"
+                              ? "bg-white text-[var(--brand-deep)]"
+                              : "bg-white/10 text-white hover:bg-white/20"
+                          }`}
+                        >
+                          Antes
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setView("after")}
+                          className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-widest transition ${
+                            view === "after"
+                              ? "bg-white text-[var(--brand-deep)]"
+                              : "bg-white/10 text-white hover:bg-white/20"
+                          }`}
+                        >
+                          Depois
+                        </button>
+                      </div>
+
+                      <div className="relative h-full w-full max-w-4xl flex-1 overflow-hidden rounded-2xl">
+                        <Image
+                          src={view === "before" ? selected.before : selected.after}
+                          alt={`${selected.alt} - ${
+                            view === "before" ? "Antes" : "Depois"
+                          }`}
+                          fill
+                          className="object-contain"
+                          sizes="100vw"
+                          quality={60}
+                        />
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              ) : null}
+            </AnimatePresence>,
+            document.body
+          )
+        : null}
     </section>
   );
 }
