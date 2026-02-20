@@ -145,7 +145,7 @@ export function ContactSection() {
               <p className="text-sm font-semibold">Redes sociais</p>
               <div className="mt-3 flex items-center gap-3">
                 <a
-                  href="https://www.tiktok.com/inovepiscinas"
+                  href="https://www.tiktok.com/@inovepiscinas"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:-translate-y-0.5 hover:bg-white/10"
