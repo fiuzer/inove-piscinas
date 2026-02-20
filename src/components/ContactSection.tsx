@@ -145,7 +145,7 @@ export function ContactSection() {
               <p className="text-sm font-semibold">Redes sociais</p>
               <div className="mt-3 flex items-center gap-3">
                 <a
-                  href="https://www.tiktok.com"
+                  href="https://www.tiktok.com/inovepiscinas"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:-translate-y-0.5 hover:bg-white/10"
@@ -161,7 +161,7 @@ export function ContactSection() {
                   </svg>
                 </a>
                 <a
-                  href="https://www.instagram.com"
+                  href="https://www.instagram.com/inovepiscinas"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:-translate-y-0.5 hover:bg-white/10"
@@ -170,7 +170,7 @@ export function ContactSection() {
                   <Instagram className="size-5" />
                 </a>
                 <a
-                  href="https://www.facebook.com"
+                  href="https://www.facebook.com/inovepiscinas"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:-translate-y-0.5 hover:bg-white/10"
