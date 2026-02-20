@@ -1,16 +1,16 @@
 ﻿"use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { SectionHeading } from "./SectionHeading";
+import { AnimatePresence, motion } from "framer-motion";
 import { Star } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { SectionHeading } from "./SectionHeading";
 
 const testimonials = [
   {
-    name: "Mauricio Cymerman",
+    name: "Fernanda Paradela",
     city: "Rio de Janeiro",
     rating: 5,
-    text: "Atendimento 100%. Além da reforma, deram um suporte de como ajustar a montagem da alvenaria e refizeram o dispositivo de aspiração para outra lateral. Foi bem sincero quanto a utilização do Gelcolt, que eles não utilizam, que era uma preocupação minha, e a piscina está perfeita. Com certeza as próximas reformas serão com a equipe INOVE!",
+    text: "Excelentes profissionais! Piscina renovada e perfeita! Leonardo sempre muito educado e solicito desde o primeiro contato com a empresa até o pós, prezando pela satisfação do cliente.",
   },
   {
     name: "Edmundo Novaes",
@@ -19,16 +19,16 @@ const testimonials = [
     text: "Fiz uma reforma completa na minha piscina com a equipe da Inove Piscinas e o resultado ficou excelente. O serviço foi muito bem executado, com atenção aos detalhes e grande profissionalismo. O atendimento do Leonardo merece destaque pela cordialidade, transparência e comprometimento em todas as etapas. Além disso, o preço cobrado foi totalmente justo, especialmente considerando a qualidade do trabalho entregue. Recomendo sem hesitar a Inove Piscinas para quem busca um serviço de alto nível.",
   },
   {
-    name: "Cley Dejosi",
+    name: "Almir Ferreira",
     city: "Rio de Janeiro",
     rating: 5,
-    text: "Serviço executado 100%, ficou muito bonita, em vista do que estava, equipe super profissional.",
+    text: "Já fiz 2 serviços com a inove, sendo que o primeiro foi recuperação estrutural de aproximadamente 2 metros de larguras por 2 metros de comprimento no fundo da piscina e pintura geral da piscina, Com sucesso total e o segundo serviço foi fortalecer o serviço anterior por pedido meu e pintura geral. Recomendo para quem procura preço, qualidade e responsabilidade com o serviço prestado aos seus clientes. Parabéns para toda a equipe da inove piscinas estou muitíssimo satisfeito com todos os senhores.",
   },
   {
-    name: "Renata Peres",
+    name: "Wagner Guedes",
     city: "Rio de Janeiro",
     rating: 5,
-    text: "Estou muito satisfeita com o serviço de reforço e pintura da minha piscina. Excelente atendimento, profissionais competentes e caprichosos.",
+    text: "Muito boa. Já pela segunda vez utilizo os serviços e ainda indico para os amigos. Podem confiar na qualidade dos serviços ! Eu sou prova viva disso !",
   },
 ];
 
