@@ -48,10 +48,10 @@ export default function Home() {
 
       <footer className="bg-[var(--brand-deep)] py-10 text-sm text-white/70">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 md:flex-row">
-          <p>Â© 2026 Inove Piscinas. Todos os direitos reservados.</p>
+          <p>© 2016-2026 Inove Piscinas. Todos os direitos reservados.</p>
           <div className="flex items-center gap-6">
             <a href="#servicos" className="hover:text-white">
-              ServiÃ§os
+              Serviços
             </a>
             <a href="#projetos" className="hover:text-white">
               Projetos
