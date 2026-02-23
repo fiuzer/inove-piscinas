@@ -68,8 +68,21 @@ export default function RootLayout({
     j.src='https://www.googletagmanager.com/gtm.js?id='+i+'&l='+l;
     f.parentNode.insertBefore(j,f);
   }
-  var idle = w.requestIdleCallback ? function(){w.requestIdleCallback(load,{timeout:3500});} : function(){setTimeout(load,3500);};
-  idle();
+  function scheduleAfterLoad(){
+    var run = function(){
+      if (w.requestIdleCallback) {
+        w.requestIdleCallback(load,{timeout:8000});
+      } else {
+        setTimeout(load,8000);
+      }
+    };
+    if (d.readyState === 'complete') {
+      run();
+    } else {
+      w.addEventListener('load', run, {once:true});
+    }
+  }
+  scheduleAfterLoad();
   ['pointerdown','scroll','keydown','touchstart'].forEach(function(evt){
     w.addEventListener(evt,load,{once:true,passive:true});
   });

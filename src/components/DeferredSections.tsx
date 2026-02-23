@@ -100,6 +100,7 @@ export function DeferredSections() {
     if (typeof window === "undefined") return;
     const node = triggerRef.current;
     if (!node) return;
+    const timeout = window.setTimeout(() => setReady(true), 5000);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -110,13 +111,16 @@ export function DeferredSections() {
       },
       {
         root: null,
-        rootMargin: "300px 0px",
+        rootMargin: "50px 0px",
         threshold: 0,
       }
     );
 
     observer.observe(node);
-    return () => observer.disconnect();
+    return () => {
+      window.clearTimeout(timeout);
+      observer.disconnect();
+    };
   }, []);
 
   if (!ready) {
