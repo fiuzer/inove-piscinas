@@ -1,7 +1,6 @@
 ﻿"use client";
 
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
 const links = [
@@ -81,7 +80,36 @@ export function Header() {
             onClick={() => setOpen((prev) => !prev)}
             aria-label={open ? "Fechar menu" : "Abrir menu"}
           >
-            {open ? <X className="size-6" /> : <Menu className="size-6" />}
+            {open ? (
+              <svg
+                viewBox="0 0 24 24"
+                className="size-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M18 6L6 18" />
+                <path d="M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg
+                viewBox="0 0 24 24"
+                className="size-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M3 6h18" />
+                <path d="M3 12h18" />
+                <path d="M3 18h18" />
+              </svg>
+            )}
           </button>
         </div>
       </div>
