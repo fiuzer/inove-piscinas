@@ -1,7 +1,6 @@
 ﻿"use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { motion } from "framer-motion";
 import { Clock, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -182,12 +181,8 @@ export function ContactSection() {
             </div>
           </div>
 
-          <motion.form
+          <form
             onSubmit={handleSubmit(onSubmit)}
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
             className="rounded-3xl border border-white/10 bg-white p-8 text-[var(--brand-deep)] shadow-xl"
           >
             <div className="grid gap-4 sm:grid-cols-2">
@@ -280,7 +275,7 @@ export function ContactSection() {
                 Recebemos sua mensagem! Em breve entraremos em contato.
               </p>
             ) : null}
-          </motion.form>
+          </form>
         </div>
       </div>
     </section>

@@ -1,6 +1,5 @@
 ﻿"use client";
 
-import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
@@ -121,22 +120,15 @@ export function Gallery() {
 
       {mounted
         ? createPortal(
-            <AnimatePresence>
-              {selected ? (
-                <motion.div
-                  className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  onClick={() => setSelected(null)}
+            selected ? (
+              <div
+                className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4"
+                onClick={() => setSelected(null)}
+              >
+                <div
+                  className="relative h-[90vh] w-full max-w-5xl overflow-hidden rounded-3xl bg-black"
+                  onClick={(event) => event.stopPropagation()}
                 >
-                  <motion.div
-                    className="relative h-[90vh] w-full max-w-5xl overflow-hidden rounded-3xl bg-black"
-                    initial={{ scale: 0.95 }}
-                    animate={{ scale: 1 }}
-                    exit={{ scale: 0.95 }}
-                    onClick={(event) => event.stopPropagation()}
-                  >
                     <button
                       type="button"
                       className="absolute right-4 top-4 z-10 flex size-12 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-black"
@@ -185,10 +177,9 @@ export function Gallery() {
                         />
                       </div>
                     </div>
-                  </motion.div>
-                </motion.div>
-              ) : null}
-            </AnimatePresence>,
+                </div>
+              </div>
+            ) : null,
             document.body
           )
         : null}

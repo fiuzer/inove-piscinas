@@ -1,6 +1,5 @@
 ﻿"use client";
 
-import { AnimatePresence, motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { SectionHeading } from "./SectionHeading";
@@ -95,17 +94,12 @@ export function Testimonials() {
         />
 
         <div className="mt-8 rounded-3xl border border-slate-100 bg-slate-50 p-8 shadow-lg sm:p-10">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current.name}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.4 }}
-              className="space-y-6"
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
-            >
+          <div
+            key={current.name}
+            className="space-y-6"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
               <div className="flex items-center gap-1 text-[var(--brand)]">
                 {Array.from({ length: current.rating }).map((_, idx) => (
                   <Star key={idx} className="size-4 fill-current" />
@@ -169,8 +163,7 @@ export function Testimonials() {
                   <p className="text-sm text-[var(--muted)]">{current.city}</p>
                 </div>
               </div>
-            </motion.div>
-          </AnimatePresence>
+          </div>
 
           <div className="mt-8 flex items-center justify-center gap-3">
             {testimonials.map((item, idx) => (
