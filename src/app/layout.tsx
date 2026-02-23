@@ -55,12 +55,25 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        <Script id="gtm" strategy="lazyOnload">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W6ZQFMT3');`}
+        <Script id="gtm-deferred" strategy="afterInteractive">
+          {`(function(w,d,l,i){
+  w[l]=w[l]||[];
+  var loaded=false;
+  function load(){
+    if(loaded) return;
+    loaded=true;
+    w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName('script')[0],j=d.createElement('script');
+    j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+'&l='+l;
+    f.parentNode.insertBefore(j,f);
+  }
+  var idle = w.requestIdleCallback ? function(){w.requestIdleCallback(load,{timeout:3500});} : function(){setTimeout(load,3500);};
+  idle();
+  ['pointerdown','scroll','keydown','touchstart'].forEach(function(evt){
+    w.addEventListener(evt,load,{once:true,passive:true});
+  });
+})(window,document,'dataLayer','GTM-W6ZQFMT3');`}
         </Script>
       </head>
       <body className={`${manrope.variable} ${montserrat.variable} antialiased`}>

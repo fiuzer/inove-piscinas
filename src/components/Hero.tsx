@@ -1,6 +1,4 @@
-﻿"use client";
-
-import { ArrowRight, ShieldCheck, Star, Wrench } from "lucide-react";
+﻿import { ArrowRight, ShieldCheck, Star, Wrench } from "lucide-react";
 import Image from "next/image";
 import heroBg from "../../public/imagens/piscina_fundo.jpg";
 import { BeforeAfterSlider } from "./BeforeAfterSlider";
@@ -75,15 +73,6 @@ export function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[var(--brand-deep)] shadow-lg transition hover:-translate-y-0.5 hover:bg-white/90"
-              onClick={() => {
-                if (typeof window !== "undefined") {
-                  (window as typeof window & { dataLayer?: Array<Record<string, unknown>> })
-                    .dataLayer?.push({
-                      event: "whatsapp_click",
-                      location: "hero",
-                    });
-                }
-              }}
             >
               Fale com um especialista
               <ArrowRight className="size-4" />
