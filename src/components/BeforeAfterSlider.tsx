@@ -9,6 +9,8 @@ type BeforeAfterSliderProps = {
   afterSrc: string;
   beforeAlt: string;
   afterAlt: string;
+  priority?: boolean;
+  imageQuality?: number;
 };
 
 export function BeforeAfterSlider({
@@ -16,6 +18,8 @@ export function BeforeAfterSlider({
   afterSrc,
   beforeAlt,
   afterAlt,
+  priority = false,
+  imageQuality = 40,
 }: BeforeAfterSliderProps) {
   const [value, setValue] = useState(55);
   const id = useId();
@@ -65,8 +69,9 @@ export function BeforeAfterSlider({
           alt={afterAlt}
           fill
           sizes="(max-width: 480px) 90vw, (max-width: 768px) 80vw, 520px"
-          quality={45}
-          loading="lazy"
+          quality={imageQuality}
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
           className="object-cover"
         />
         <div
@@ -78,7 +83,7 @@ export function BeforeAfterSlider({
             alt={beforeAlt}
             fill
             sizes="(max-width: 480px) 90vw, (max-width: 768px) 80vw, 520px"
-            quality={45}
+            quality={imageQuality}
             loading="lazy"
             className="object-cover"
           />

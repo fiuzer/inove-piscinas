@@ -2,18 +2,8 @@
 
 import { ArrowRight, ShieldCheck, Star, Wrench } from "lucide-react";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import heroBg from "../../public/imagens/piscina_fundo.jpg";
-
-const BeforeAfterSlider = dynamic(
-  () => import("./BeforeAfterSlider").then((mod) => mod.BeforeAfterSlider),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="h-[420px] w-full max-w-[520px] rounded-2xl border border-white/20 bg-white/10 shadow-xl backdrop-blur" />
-    ),
-  }
-);
+import { BeforeAfterSlider } from "./BeforeAfterSlider";
 
 const badges = [
   { icon: ShieldCheck, label: "Garantia de serviço" },
@@ -29,10 +19,19 @@ export function Hero() {
           src={heroBg}
           alt="Piscina com vista ao entardecer"
           fill
-          sizes="(max-width: 1200px) 100vw, 1200px"
+          sizes="100vw"
           quality={40}
           placeholder="blur"
-          className="object-cover opacity-35 sm:opacity-50"
+          className="object-cover opacity-35 md:hidden"
+        />
+        <Image
+          src={heroBg}
+          alt="Piscina com vista ao entardecer"
+          fill
+          sizes="100vw"
+          quality={75}
+          placeholder="blur"
+          className="hidden object-cover opacity-50 md:block"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-deep)] via-[rgba(0,29,61,0.75)] to-transparent sm:from-[var(--brand-deep)] sm:via-[rgba(0,29,61,0.75)]" />
       </div>
@@ -56,6 +55,8 @@ export function Hero() {
                 afterSrc="/imagens/antespiscina.jpg"
                 beforeAlt="Piscina antes da reforma"
                 afterAlt="Piscina depois da reforma"
+                priority
+                imageQuality={40}
               />
               <div className="mt-4 flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/70">
                 <span>Antes</span>
@@ -113,6 +114,7 @@ export function Hero() {
             afterSrc="/imagens/antespiscina.jpg"
             beforeAlt="Piscina antes da reforma"
             afterAlt="Piscina depois da reforma"
+            imageQuality={75}
           />
           <div className="mt-4 flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/70">
             <span>Antes</span>

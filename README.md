@@ -1,62 +1,108 @@
-# Inove Piscinas — Landing Page
+﻿# Inove Piscinas - Landing Page
 
-Projeto de landing page moderna para a **Inove Piscinas**, focado em alta conversão, performance, acessibilidade e SEO.
+Landing page institucional da **Inove Piscinas**, construída com foco em conversão, SEO técnico, responsividade e performance.
 
-## Visão Geral
+## Tecnologias
 
-Este projeto foi criado em **Next.js (App Router)** com **Tailwind CSS** e contém:
+- `Next.js 16` (App Router)
+- `React 19`
+- `TypeScript`
+- `Tailwind CSS 4`
+- `Lucide React` (ícones)
+- `React Hook Form + Zod` (validação)
+- `Nodemailer` (envio de formulário por SMTP)
+- `Google Tag Manager` (via `dataLayer`)
 
-- Hero com slider de Antes/Depois.
-- Cards de serviços com hover moderno.
-- Galeria em bento grid com lightbox.
-- Depoimentos com carrossel.
-- Formulário validado com React Hook Form + Zod.
-- SEO com `metadata` e JSON-LD para Local Business.
-- CTA flutuante do WhatsApp.
+## Funcionalidades implementadas
 
-## Stack
+- Hero responsivo com:
+- título e CTA para WhatsApp
+- comparador Antes/Depois (desktop e mobile)
+- Header com menu desktop/mobile e transição por scroll
+- Seção de serviços em cards
+- Seção de projetos com:
+- grid de capas
+- modal em portal (`document.body`)
+- alternância Antes/Depois
+- lock de scroll ao abrir modal
+- Seção de depoimentos com:
+- autoplay
+- swipe no mobile
+- truncamento em 3 linhas + `Ver mais`/`Ver menos`
+- altura estável do card
+- Formulário de contato com:
+- validação no cliente e no servidor
+- sanitização de campos
+- honeypot anti-spam
+- envio SMTP
 
-- Next.js (App Router)
-- Tailwind CSS
-- Framer Motion
-- Lucide React
-- React Hook Form + Zod
+## Estrutura principal
 
-## Como Rodar
+- `src/app/layout.tsx`: metadata global, fontes e GTM
+- `src/app/page.tsx`: composição da home
+- `src/app/api/contact/route.ts`: endpoint de envio do formulário
+- `src/components/*`: seções da landing
+- `public/imagens/*`: imagens locais otimizadas
+
+## Variáveis de ambiente
+
+Crie `/.env.local` na raiz do projeto (`inove-piscinas`) com:
+
+```env
+SMTP_HOST=
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER=
+SMTP_PASS=
+MAIL_TO=
+```
+
+Notas:
+- `MAIL_TO` é o e-mail que recebe os leads.
+- `replyTo` usa o e-mail informado no formulário.
+
+## Analytics e eventos
+
+O GTM é carregado no layout e os eventos são enviados para `dataLayer`:
+
+- `whatsapp_click`
+- `form_submit`
+
+Arquivo de referência: `src/app/layout.tsx` e componentes de CTA/form.
+
+## Performance (estado atual)
+
+- Carregamento progressivo de seções abaixo da dobra (`DeferredSections`)
+- Redução de JS cliente removendo animações de runtime onde possível
+- Imagens com `next/image` + `qualities` configuradas (`next.config.ts`)
+- Modal de projetos renderizado via portal para comportamento estável no mobile
+
+## Scripts
 
 ```bash
 npm install
 npm run dev
+npm run build
+npm run start
+npm run lint
 ```
 
-Acesse `http://localhost:3000`.
+## Deploy (Vercel)
 
-## Estrutura Principal
+1. Conectar repositório
+2. Configurar variáveis de ambiente no projeto Vercel
+3. Deploy da branch principal
 
-- `src/app/page.tsx` — Página principal.
-- `src/app/layout.tsx` — Metadados e layout base.
-- `src/app/globals.css` — Estilos globais e tokens de cor.
-- `src/components/*` — Componentes da landing.
+## Troubleshooting rápido
 
-## SEO
+### Erro de quality no `next/image`
 
-O projeto utiliza:
+Se aparecer erro de qualidade não configurada, ajuste `images.qualities` em `next.config.ts`.
 
-- `next/metadata` com Open Graph.
-- JSON-LD do tipo **LocalBusiness** no `page.tsx`.
+### Modal abrindo fora da área visível no mobile
 
-## Contato (exemplo)
-
-Os dados exibidos (telefone/e-mail) são exemplos e podem ser ajustados no componente:
-
-- `src/components/ContactSection.tsx`
-
-## Próximos Passos (opcional)
-
-- Integrar envio real do formulário via API Route.
-- Substituir imagens por fotos reais da Inove.
-- Adicionar CMS (Sanity/Strapi) para conteúdo dinâmico.
+O modal de projetos usa portal. Validar se `selected` está abrindo em `document.body` (`src/components/Gallery.tsx`).
 
 ---
 
-© 2026 Inove Piscinas. Todos os direitos reservados.
+Projeto mantido em evolução contínua com foco em conversão e estabilidade de produção.
