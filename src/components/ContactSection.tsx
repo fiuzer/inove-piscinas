@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Clock, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { SectionHeading } from "./SectionHeading";
@@ -24,6 +24,8 @@ const sanitize = (value: string) =>
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const submittingLockRef = useRef(false);
+  const lastSubmitAtRef = useRef(0);
   const {
     register,
     handleSubmit,
@@ -42,7 +44,14 @@ export function ContactSection() {
   });
 
   const onSubmit = async (data: FormData) => {
+    const now = Date.now();
+    if (submittingLockRef.current || now - lastSubmitAtRef.current < 2000) {
+      return;
+    }
+    submittingLockRef.current = true;
+
     if (data.company) {
+      submittingLockRef.current = false;
       return;
     }
 
@@ -57,29 +66,34 @@ export function ContactSection() {
 
     setErrorMessage(null);
 
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(sanitized),
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(sanitized),
+      });
 
-    if (!response.ok) {
-      setErrorMessage("Não foi possível enviar. Tente novamente.");
-      return;
+      if (!response.ok) {
+        setErrorMessage("Não foi possível enviar. Tente novamente.");
+        return;
+      }
+
+      if (typeof window !== "undefined") {
+        (window as typeof window & { dataLayer?: Array<Record<string, unknown>> })
+          .dataLayer?.push({
+            event: "form_submit",
+            form_id: "contact",
+          });
+      }
+
+      setSubmitted(true);
+      lastSubmitAtRef.current = Date.now();
+      reset();
+    } finally {
+      submittingLockRef.current = false;
     }
-
-    if (typeof window !== "undefined") {
-      (window as typeof window & { dataLayer?: Array<Record<string, unknown>> })
-        .dataLayer?.push({
-          event: "form_submit",
-          form_id: "contact",
-        });
-    }
-
-    setSubmitted(true);
-    reset();
   };
 
   return (
