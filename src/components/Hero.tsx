@@ -2,6 +2,7 @@
 import Image from "next/image";
 import heroBg from "../../public/imagens/piscina_fundo.jpg";
 import { BeforeAfterSlider } from "./BeforeAfterSlider";
+import { TrackedWhatsAppLink } from "./TrackedWhatsAppLink";
 
 const badges = [
   { icon: ShieldCheck, label: "Garantia de serviço" },
@@ -68,15 +69,14 @@ export function Hero() {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-start">
-            <a
+            <TrackedWhatsAppLink
               href="https://wa.me/5521993739579?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20seu%20site%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento."
-              target="_blank"
-              rel="noopener noreferrer"
+              location="hero"
               className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[var(--brand-deep)] shadow-lg transition hover:-translate-y-0.5 hover:bg-white/90"
             >
               Fale com um especialista
               <ArrowRight className="size-4" />
-            </a>
+            </TrackedWhatsAppLink>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-3">
