@@ -42,7 +42,7 @@ export function Hero() {
               Sua piscina está desbotada?
             </p>
             <h1 className="font-heading text font-semibold leading-tight text-4xl sm:text-5xl lg:text-6xl">
-              <span className="whitespace-nowrap">Somos especialistas</span>
+              <span>Somos especialistas</span>
               <br />
               em reforma de
               <br />
