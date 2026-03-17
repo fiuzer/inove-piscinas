@@ -39,9 +39,9 @@ export function Hero() {
         <div className="order-2 flex-1 space-y-5 px-4 text-center sm:px-6 sm:text-left lg:order-1 lg:px-0 lg:text-left">
           <div className="space-y-3">
             <h1 className="font-heading text font-semibold leading-tight text-4xl sm:text-5xl lg:text-6xl">
-              <span>Somos especialistas</span>
+              <span>Especialistas em</span>
               <br />
-              em reforma e pintura de
+              reforma e pintura de
               <br />
               piscina de fibra
             </h1>
