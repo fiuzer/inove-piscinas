@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Inove Piscinas | Reforma de piscinas no RJ",
+    title: "Reforma de piscinas no RJ",
     description:
-      "Especialistas em reforma e pintura de piscinas. Orçamento rápido via WhatsApp.",
+      "Especialistas em reforma e pintura de piscinas de Fibra. Orçamento rápido via WhatsApp.",
     type: "website",
     locale: "pt_BR",
     url: "/",
