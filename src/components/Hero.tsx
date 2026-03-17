@@ -35,13 +35,13 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-deep)] via-[rgba(0,29,61,0.75)] to-transparent sm:from-[var(--brand-deep)] sm:via-[rgba(0,29,61,0.75)]" />
       </div>
 
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px pb-20 pt-10 lg:flex-row lg:items-center lg:gap-16 lg:pb-28 lg:pt-16">
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px pb-20 pt-12 lg:flex-row lg:items-center lg:gap-16 lg:pb-28 lg:pt-16">
         <div className="order-2 flex-1 space-y-5 px-4 text-center sm:px-6 sm:text-left lg:order-1 lg:px-0 lg:text-left">
           <div className="space-y-3">
             <h1 className="font-heading text font-semibold leading-tight text-4xl sm:text-5xl lg:text-6xl">
               <span>Somos especialistas</span>
               <br />
-              em reforma de
+              em reforma e pintura de
               <br />
               piscina de fibra
             </h1>
@@ -69,12 +69,16 @@ export function Hero() {
             <TrackedWhatsAppLink
               href="https://wa.me/5521993739579?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20seu%20site%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento."
               location="hero"
-              className="inline-flex items-center gap-3 rounded-full bg-white px-10 py-4 text-lg font-semibold text-[var(--brand-deep)] shadow-lg transition hover:-translate-y-0.5 hover:bg-white/90"
+              className="inline-flex items-center gap-3 rounded-full bg-white px-10 py-4 text-lg font-semibold text-[var(--brand-deep)] shadow-lg transition hover:-translate-y-0.5 hover:bg-white/90 lg:px-8 lg:py-3 lg:text-base"
             >
               Fale com um especialista
               <ArrowRight className="size-5" />
             </TrackedWhatsAppLink>
           </div>
+
+          <p className="text-sm italic text-white/75 lg:hidden">
+            *Nao instalamos, nem vendemos piscinas.
+          </p>
 
           <div className="grid gap-3 sm:grid-cols-3">
             {badges.map((item) => {
@@ -93,7 +97,7 @@ export function Hero() {
             })}
           </div>
 
-          <p className="text-sm italic text-white/75">
+          <p className="hidden text-sm italic text-white/75 lg:block">
             *Nao instalamos, nem vendemos piscinas.
           </p>
         </div>
