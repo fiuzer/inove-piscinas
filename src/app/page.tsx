@@ -1,14 +1,14 @@
-﻿import { Header } from "@/components/Header";
+﻿import { DeferredSections } from "@/components/DeferredSections";
+import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
-import { DeferredSections } from "@/components/DeferredSections";
 import { WaveDivider } from "@/components/WaveDivider";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Inove Piscinas - Reforma de Piscinas no RJ",
+  title: "Reforma de Piscinas de fibra",
   description:
-    "Especialistas em reforma e pintura de piscinas de fibra no Rio de Janeiro e NiterÃ³i.",
+    "Especialistas em reforma e pintura de piscinas de fibra no Rio de Janeiro e Niterói.",
 };
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
       addressRegion: "RJ",
       addressCountry: "BR",
     },
-    areaServed: ["Rio de Janeiro", "NiterÃ³i"],
+    areaServed: ["Rio de Janeiro", "Niterói"],
     telephone: "+55 21 99373-9579",
     url: "https://www.inovepiscinas.com",
     priceRange: "$$",
