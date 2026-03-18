@@ -69,7 +69,7 @@ export function Hero() {
             <TrackedWhatsAppLink
               href="https://wa.me/5521993739579?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20seu%20site%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento."
               location="hero"
-              className="inline-flex items-center gap-3 rounded-full bg-white px-10 py-4 text-lg font-semibold text-[var(--brand-deep)] shadow-lg transition hover:-translate-y-0.5 hover:bg-white/90 lg:px-8 lg:py-3 lg:text-base"
+              className="inline-flex items-center gap-3 rounded-full bg-white px-10 py-4 text-xl font-semibold text-[var(--brand-deep)] shadow-lg transition hover:-translate-y-0.5 hover:bg-white/90 sm:text-lg lg:px-8 lg:py-3 lg:text-base"
             >
               Fale com um especialista
               <ArrowRight className="size-5" />
@@ -77,7 +77,7 @@ export function Hero() {
           </div>
 
           <p className="text-sm italic text-white/75 lg:hidden">
-            *Nao instalamos, nem vendemos piscinas.
+            *Não instalamos, nem vendemos piscinas.
           </p>
 
           <div className="grid gap-3 sm:grid-cols-3">
