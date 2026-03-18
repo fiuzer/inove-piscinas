@@ -98,7 +98,7 @@ export function Hero() {
           </div>
 
           <p className="hidden text-sm italic text-white/75 lg:block">
-            *Nao instalamos, nem vendemos piscinas.
+            *Não instalamos, nem vendemos piscinas.
           </p>
         </div>
 
