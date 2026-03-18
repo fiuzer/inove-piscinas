@@ -6,7 +6,7 @@ import { WaveDivider } from "@/components/WaveDivider";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Reforma de Piscinas de fibra",
+  title: "Reforma de Piscinas de Fibra",
   description:
     "Especialistas em reforma e pintura de piscinas de fibra no Rio de Janeiro e Niterói.",
 };
