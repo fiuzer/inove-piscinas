@@ -16,7 +16,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: {
-    default: "Inove Piscinas | Reforma de piscinas no RJ",
+    default: "Reforma de piscinas de fibra",
     template: "%s | Inove Piscinas",
   },
   description:
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Reforma de piscinas no RJ",
+    title: "Reforma de piscinas de fibra",
     description:
       "Especialistas em reforma e pintura de piscinas de Fibra. Orçamento rápido via WhatsApp.",
     type: "website",
