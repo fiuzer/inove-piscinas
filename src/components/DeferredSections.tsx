@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import { FloatingWhatsApp } from "./FloatingWhatsApp";
 import { WaveDivider } from "./WaveDivider";
 
 const Gallery = dynamic(() => import("./Gallery").then((mod) => mod.Gallery), {
@@ -140,7 +139,6 @@ export function DeferredSections() {
       <Testimonials />
       <WaveDivider variant="dark" flip className="bg-white" />
       <ContactSection />
-      <FloatingWhatsApp />
     </>
   );
 }

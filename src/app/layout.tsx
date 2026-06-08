@@ -1,6 +1,9 @@
 ﻿import type { Metadata } from "next";
 import { Manrope, Montserrat } from "next/font/google";
 import Script from "next/script";
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -16,19 +19,27 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: {
-    default: "Reforma de piscinas de fibra",
+    default: "Reforma de Piscina de Fibra no Rio de Janeiro | Inove Piscinas",
     template: "%s | Inove Piscinas",
   },
   description:
-    "Reforma e pintura de piscinas de fibra no Rio de Janeiro e Niterói. Atendimento rápido, garantia e equipe especializada.",
+    "Especialistas em reforma, pintura e manutenção de piscinas e banheiras de fibra no RJ e Niterói. +10 anos de experiência. Orçamento rápido pelo WhatsApp.",
+  keywords: [
+    "reforma piscina fibra RJ",
+    "pintura piscina fibra",
+    "reforma banheira fibra",
+    "conserto piscina Niterói",
+    "reforma piscina Rio de Janeiro",
+    "pintura banheira fibra",
+  ],
   metadataBase: new URL("https://www.inovepiscinas.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Reforma de piscinas de fibra",
+    title: "Reforma de Piscina de Fibra no Rio de Janeiro | Inove Piscinas",
     description:
-      "Especialistas em reforma e pintura de piscinas de Fibra. Orçamento rápido via WhatsApp.",
+      "Especialistas em reforma, pintura e manutenção de piscinas e banheiras de fibra no RJ e Niterói. +10 anos de experiência. Orçamento rápido pelo WhatsApp.",
     type: "website",
     locale: "pt_BR",
     url: "/",
@@ -98,7 +109,10 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+        <Header />
         {children}
+        <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   );

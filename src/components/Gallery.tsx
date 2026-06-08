@@ -106,7 +106,7 @@ export function Gallery() {
                 fill
                 className="object-cover transition duration-500 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                quality={50}
+                quality={80}
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-70 transition group-hover:opacity-90" />
@@ -173,7 +173,7 @@ export function Gallery() {
                           fill
                           className="object-contain"
                           sizes="100vw"
-                          quality={60}
+                          quality={90}
                         />
                       </div>
                     </div>

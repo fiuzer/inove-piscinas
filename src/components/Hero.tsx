@@ -20,6 +20,7 @@ export function Hero() {
           fill
           sizes="100vw"
           quality={40}
+          priority
           placeholder="blur"
           className="object-cover opacity-35 md:hidden"
         />
@@ -29,13 +30,14 @@ export function Hero() {
           fill
           sizes="100vw"
           quality={75}
+          priority
           placeholder="blur"
           className="hidden object-cover opacity-50 md:block"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-deep)] via-[rgba(0,29,61,0.75)] to-transparent sm:from-[var(--brand-deep)] sm:via-[rgba(0,29,61,0.75)]" />
       </div>
 
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px pb-20 pt-16 sm:pt-12 lg:flex-row lg:items-center lg:gap-16 lg:pb-28 lg:pt-16">
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-16 sm:pt-12 lg:flex-row lg:items-center lg:gap-16 lg:pb-28 lg:pt-16">
         <div className="order-2 flex-1 space-y-5 px-4 text-center sm:px-6 sm:text-left lg:order-1 lg:px-0 lg:text-left">
           <div className="space-y-3">
             <h1 className="font-heading text font-semibold leading-tight text-3xl sm:text-4xl lg:text-5xl">
@@ -52,7 +54,7 @@ export function Hero() {
                 beforeAlt="Piscina antes da reforma"
                 afterAlt="Piscina depois da reforma"
                 priority
-                imageQuality={40}
+                imageQuality={75}
               />
               <div className="mt-4 flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/70">
                 <span>Antes</span>
