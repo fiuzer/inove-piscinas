@@ -1,4 +1,5 @@
 import { ServicePageLayout } from "@/components/ServicePageLayout";
+import { WHATSAPP_LINKS } from "@/lib/whatsapp";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,8 +8,7 @@ export const metadata: Metadata = {
     "Conserto de fissuras, furos e revitalização completa de piscinas de fibra no Rio de Janeiro e Niterói. Orçamento pelo WhatsApp.",
 };
 
-const WHATSAPP_HREF =
-  "https://wa.me/5521993739579?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20reforma%20de%20piscina%20de%20fibra.";
+const WHATSAPP_HREF = WHATSAPP_LINKS.reformaPiscina;
 
 const description = [
   "A piscina de fibra é resistente e durável, mas com o tempo pode desenvolver fissuras, furos, bolhas e perda de cor. A Inove Piscinas é especialista em reforma de piscinas de fibra no Rio de Janeiro e Niterói há mais de 10 anos, com centenas de projetos entregues com garantia.",
@@ -77,10 +77,11 @@ export default function ReformaPiscinaFibraPage() {
         description={description}
         included={included}
         faq={faq}
-        beforeSrc="/imagens/piscina1.jpg"
-        afterSrc="/imagens/piscina-antes1.jpg"
+        beforeSrc="/imagens/antes-depois-reforma-piscina2.png"
+        afterSrc="/imagens/antes-depois-reforma-piscina1.png"
         beforeAlt="Piscina de fibra antes da reforma"
         afterAlt="Piscina de fibra depois da reforma"
+        imagePosition="center calc(50% - 50px)"
         whatsappHref={WHATSAPP_HREF}
         breadcrumbLabel="Reforma de Piscina de Fibra"
       />

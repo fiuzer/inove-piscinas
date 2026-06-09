@@ -1,4 +1,5 @@
-﻿import { ArrowRight, ShieldCheck, Star, Wrench } from "lucide-react";
+﻿import { WHATSAPP_LINKS } from "@/lib/whatsapp";
+import { ArrowRight, ShieldCheck, Star, Wrench } from "lucide-react";
 import Image from "next/image";
 import heroBg from "../../public/imagens/piscina_fundo.jpg";
 import { BeforeAfterSlider } from "./BeforeAfterSlider";
@@ -69,7 +70,7 @@ export function Hero() {
 
           <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-start">
             <TrackedWhatsAppLink
-              href="https://wa.me/5521993739579?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20seu%20site%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento."
+              href={WHATSAPP_LINKS.home}
               location="hero"
               className="inline-flex items-center gap-3 rounded-full bg-white px-10 py-4 text-xl font-semibold text-[var(--brand-deep)] shadow-lg transition hover:-translate-y-0.5 hover:bg-white/90 sm:text-lg lg:px-8 lg:py-3 lg:text-base"
             >

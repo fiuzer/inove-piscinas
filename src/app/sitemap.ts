@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${base}/servicos/pintura-banheira-fibra`,
+      url: `${base}/servicos/conserto-piscina-fibra`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,

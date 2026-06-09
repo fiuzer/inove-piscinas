@@ -1,5 +1,6 @@
 "use client";
 
+import { useWhatsAppClick } from "@/hooks/useWhatsAppClick";
 import type { ReactNode } from "react";
 
 type TrackedWhatsAppLinkProps = {
@@ -17,6 +18,8 @@ export function TrackedWhatsAppLink({
   ariaLabel,
   location,
 }: TrackedWhatsAppLinkProps) {
+  const { trackClick } = useWhatsAppClick();
+
   return (
     <a
       href={href}
@@ -24,15 +27,7 @@ export function TrackedWhatsAppLink({
       rel="noopener noreferrer"
       className={className}
       aria-label={ariaLabel}
-      onClick={() => {
-        if (typeof window === "undefined") return;
-        (window as typeof window & { dataLayer?: Array<Record<string, unknown>> })
-          .dataLayer?.push({
-            event: "whatsapp_click",
-            location,
-            whatsapp_url: href,
-          });
-      }}
+      onClick={() => trackClick(location)}
     >
       {children}
     </a>

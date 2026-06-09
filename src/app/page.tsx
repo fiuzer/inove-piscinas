@@ -33,7 +33,7 @@ export default function Home() {
       "Reforma de piscina de fibra",
       "Pintura de piscina de fibra",
       "Reforma de banheira de fibra",
-      "Pintura de banheira de fibra",
+      "Conserto de piscina de fibra",
     ],
   };
 

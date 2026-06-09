@@ -21,7 +21,7 @@ const projects = [
   },
   {
     id: 3,
-    before: "/imagens/piscina-antes3.jpg",
+    before: "/imagens/pintura-piscina-antes.jpg",
     after: "/imagens/piscina3.jpg",
     alt: "Projeto 03",
   },

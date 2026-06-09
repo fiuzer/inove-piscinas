@@ -4,8 +4,8 @@ import Link from "next/link";
 const serviceLinks = [
   { label: "Reforma de Piscina de Fibra", href: "/servicos/reforma-piscina-fibra" },
   { label: "Pintura de Piscina de Fibra", href: "/servicos/pintura-piscina-fibra" },
+  { label: "Conserto de Piscina de Fibra", href: "/servicos/conserto-piscina-fibra" },
   { label: "Reforma de Banheira de Fibra", href: "/servicos/reforma-banheira-fibra" },
-  { label: "Pintura de Banheira de Fibra", href: "/servicos/pintura-banheira-fibra" },
 ];
 
 export function Footer() {

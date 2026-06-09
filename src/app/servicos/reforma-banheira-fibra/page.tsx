@@ -1,4 +1,5 @@
 import { ServicePageLayout } from "@/components/ServicePageLayout";
+import { WHATSAPP_LINKS } from "@/lib/whatsapp";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,11 +8,10 @@ export const metadata: Metadata = {
     "Conserto e revitalização de banheiras de fibra no Rio de Janeiro. Equipe especializada, atendimento rápido e garantia de serviço.",
 };
 
-const WHATSAPP_HREF =
-  "https://wa.me/5521993739579?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20reforma%20de%20banheira%20de%20fibra.";
+const WHATSAPP_HREF = WHATSAPP_LINKS.reformaBanheira;
 
 const description = [
-  "Banheiras de fibra (também chamadas de ofurô ou spa) são investimentos que, com o tempo, podem apresentar fissuras, manchas, perda de brilho ou danos estruturais. A Inove Piscinas oferece serviço completo de reforma de banheiras de fibra no Rio de Janeiro e Niterói.",
+  "Banheiras de fibra são investimentos que, com o tempo, podem apresentar fissuras, manchas, perda de brilho ou danos estruturais. A Inove Piscinas oferece serviço completo de reforma de banheiras de fibra no Rio de Janeiro e Niterói.",
   "O processo começa com uma avaliação detalhada do estado da banheira. Nossa equipe identifica todos os pontos de dano — trincas, bolhas, desgaste de gel coat — e apresenta um diagnóstico honesto com o que é necessário para restaurar a peça.",
   "Utilizamos materiais de alta qualidade compatíveis com a estrutura de fibra de vidro, garantindo resistência à água quente, produtos de limpeza e ao uso cotidiano. O resultado é uma banheira com aparência renovada e superfície lisa, como se fosse nova.",
   "Nosso diferencial é o atendimento cuidadoso e o respeito ao ambiente do cliente. Trabalhamos com limpeza e organização, minimizando qualquer transtorno durante o serviço.",
@@ -27,11 +27,6 @@ const included = [
 ];
 
 const faq = [
-  {
-    question: "Vocês reformam banheiras de ofurô e spa também?",
-    answer:
-      "Sim, trabalhamos com todos os tipos de banheiras de fibra, incluindo ofurô, spa e hidromassagem.",
-  },
   {
     question: "A banheira precisa ser removida para a reforma?",
     answer:
@@ -77,8 +72,8 @@ export default function ReformaBanheiraFibraPage() {
         description={description}
         included={included}
         faq={faq}
-        beforeSrc="/imagens/piscina3.jpg"
-        afterSrc="/imagens/piscina-antes3.jpg"
+        beforeSrc="/imagens/piscina4.jpg"
+        afterSrc="/imagens/piscina-antes4.jpg"
         beforeAlt="Banheira de fibra antes da reforma"
         afterAlt="Banheira de fibra depois da reforma"
         whatsappHref={WHATSAPP_HREF}

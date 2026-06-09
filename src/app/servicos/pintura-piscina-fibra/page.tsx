@@ -1,4 +1,5 @@
 import { ServicePageLayout } from "@/components/ServicePageLayout";
+import { WHATSAPP_LINKS } from "@/lib/whatsapp";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,8 +8,7 @@ export const metadata: Metadata = {
     "Pintura profissional de piscinas de fibra com materiais resistentes ao cloro e ao sol. Acabamento premium e garantia de serviço. Atendemos RJ e Niterói.",
 };
 
-const WHATSAPP_HREF =
-  "https://wa.me/5521993739579?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20pintura%20de%20piscina%20de%20fibra.";
+const WHATSAPP_HREF = WHATSAPP_LINKS.pinturaPiscina;
 
 const description = [
   "A pintura de piscina de fibra vai além da estética: ela protege a estrutura contra a ação do cloro, raios UV e variações de temperatura. A Inove Piscinas utiliza tintas e resinas específicas para fibra de vidro, garantindo aderência superior e acabamento duradouro.",
@@ -77,8 +77,8 @@ export default function PinturaPiscinaFibraPage() {
         description={description}
         included={included}
         faq={faq}
-        beforeSrc="/imagens/piscina2.jpg"
-        afterSrc="/imagens/piscina-antes2.jpg"
+        beforeSrc="/imagens/pintura-piscina-antes.jpg"
+        afterSrc="/imagens/pintura-piscina-depois.png"
         beforeAlt="Piscina de fibra antes da pintura"
         afterAlt="Piscina de fibra depois da pintura"
         whatsappHref={WHATSAPP_HREF}

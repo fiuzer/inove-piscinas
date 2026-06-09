@@ -11,6 +11,9 @@ type BeforeAfterSliderProps = {
   afterAlt: string;
   priority?: boolean;
   imageQuality?: number;
+  imagePosition?: string;
+  imageYOffset?: string;
+  imageScale?: number;
 };
 
 export function BeforeAfterSlider({
@@ -20,7 +23,14 @@ export function BeforeAfterSlider({
   afterAlt,
   priority = false,
   imageQuality = 40,
+  imagePosition = "center",
+  imageYOffset = "0%",
+  imageScale = 1.4,
 }: BeforeAfterSliderProps) {
+  const imageStyle: React.CSSProperties =
+    imageYOffset !== "0%"
+      ? { objectPosition: imagePosition, transform: `scale(${imageScale}) translateY(${imageYOffset})`, transformOrigin: "center center" }
+      : { objectPosition: imagePosition };
   const [value, setValue] = useState(55);
   const id = useId();
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -73,6 +83,7 @@ export function BeforeAfterSlider({
           loading={priority ? "eager" : "lazy"}
           fetchPriority={priority ? "high" : "auto"}
           className="object-cover"
+          style={imageStyle}
         />
         <div
           className="absolute inset-0"
@@ -86,6 +97,7 @@ export function BeforeAfterSlider({
             quality={imageQuality}
             loading="lazy"
             className="object-cover"
+            style={imageStyle}
           />
         </div>
         <div

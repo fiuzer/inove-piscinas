@@ -1,5 +1,8 @@
 import { TrackedWhatsAppLink } from "@/components/TrackedWhatsAppLink";
 import { WaveDivider } from "@/components/WaveDivider";
+import { WHATSAPP_LINKS } from "@/lib/whatsapp";
+import Image from "next/image";
+import heroBg from "../../../public/imagens/piscina_fundo.jpg";
 import { ArrowRight, MapPin, Shield, Star, Wrench } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -9,8 +12,7 @@ export const metadata: Metadata = {
     "Conheça a Inove Piscinas: mais de 10 anos de experiência em reforma e pintura de piscinas e banheiras de fibra no Rio de Janeiro e Niterói.",
 };
 
-const WHATSAPP_HREF =
-  "https://wa.me/5521993739579?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Inove%20e%20gostaria%20de%20um%20or%C3%A7amento.";
+const WHATSAPP_HREF = WHATSAPP_LINKS.sobre;
 
 const stats = [
   { value: "10+", label: "Anos de experiência" },
@@ -50,8 +52,12 @@ export default function SobrePage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-[var(--brand-deep)] pb-20 pt-28 text-white sm:pt-36">
-        <div className="mx-auto max-w-4xl px-6 text-center">
+      <section className="relative isolate overflow-hidden bg-[var(--brand-deep)] pb-20 pt-28 text-white sm:pt-36">
+        <div className="absolute inset-0">
+          <Image src={heroBg} alt="" fill sizes="100vw" quality={60} className="object-cover opacity-30" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-deep)]/80 via-[var(--brand-dark)]/60 to-[var(--brand-deep)]/80" />
+        </div>
+        <div className="relative mx-auto max-w-4xl px-6 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/50">
             Nossa história
           </p>

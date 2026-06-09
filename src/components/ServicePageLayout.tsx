@@ -1,5 +1,7 @@
 import { ArrowRight, MapPin, Shield, Star, Wrench } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import heroBg from "../../public/imagens/piscina_fundo.jpg";
 import { BeforeAfterSlider } from "./BeforeAfterSlider";
 import { TrackedWhatsAppLink } from "./TrackedWhatsAppLink";
 import { WaveDivider } from "./WaveDivider";
@@ -18,6 +20,9 @@ type ServicePageLayoutProps = {
   afterAlt: string;
   whatsappHref: string;
   breadcrumbLabel: string;
+  imagePosition?: string;
+  imageYOffset?: string;
+  imageScale?: number;
 };
 
 const differentials = [
@@ -58,12 +63,25 @@ export function ServicePageLayout({
   afterAlt,
   whatsappHref,
   breadcrumbLabel,
+  imagePosition,
+  imageYOffset,
+  imageScale,
 }: ServicePageLayoutProps) {
   return (
     <>
       {/* Hero */}
       <section className="relative isolate overflow-hidden bg-[var(--brand-deep)] pb-20 pt-28 text-white sm:pt-36">
-        <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-deep)] via-[var(--brand-dark)] to-[var(--brand-deep)]" />
+        <div className="absolute inset-0">
+          <Image
+            src={heroBg}
+            alt=""
+            fill
+            sizes="100vw"
+            quality={60}
+            className="object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-deep)]/80 via-[var(--brand-dark)]/60 to-[var(--brand-deep)]/80" />
+        </div>
         <div className="relative mx-auto max-w-4xl px-6 text-center">
           <nav aria-label="Breadcrumb" className="mb-6 text-sm text-white/50">
             <Link href="/" className="transition hover:text-white/80">
@@ -137,6 +155,9 @@ export function ServicePageLayout({
             beforeAlt={beforeAlt}
             afterAlt={afterAlt}
             imageQuality={80}
+            imagePosition={imagePosition}
+            imageYOffset={imageYOffset}
+            imageScale={imageScale}
           />
           <div className="mt-4 flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/60">
             <span>Antes</span>

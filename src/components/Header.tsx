@@ -1,9 +1,11 @@
 "use client";
 
+import { WHATSAPP_LINKS } from "@/lib/whatsapp";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { TrackedWhatsAppLink } from "./TrackedWhatsAppLink";
 
 const services = [
   {
@@ -15,17 +17,16 @@ const services = [
     href: "/servicos/pintura-piscina-fibra",
   },
   {
+    label: "Conserto de Piscina de Fibra",
+    href: "/servicos/conserto-piscina-fibra",
+  },
+  {
     label: "Reforma de Banheira de Fibra",
     href: "/servicos/reforma-banheira-fibra",
   },
-  {
-    label: "Pintura de Banheira de Fibra",
-    href: "/servicos/pintura-banheira-fibra",
-  },
 ];
 
-const WHATSAPP_URL =
-  "https://wa.me/5521993739579?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20seu%20site%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento.";
+const WHATSAPP_URL = WHATSAPP_LINKS.home;
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -135,14 +136,13 @@ export function Header() {
               Contato
             </Link>
 
-            <a
+            <TrackedWhatsAppLink
               href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              location="header"
               className="rounded-full bg-[var(--brand)] px-5 py-2 text-xs font-semibold uppercase tracking-widest text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[var(--brand-dark)]"
             >
               Peça seu orçamento
-            </a>
+            </TrackedWhatsAppLink>
           </nav>
 
           {/* Hamburger */}
@@ -228,15 +228,13 @@ export function Header() {
                 Contato
               </Link>
 
-              <a
+              <TrackedWhatsAppLink
                 href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileOpen(false)}
+                location="header-mobile"
                 className="rounded-full bg-[var(--brand)] px-5 py-3 text-center text-xs font-semibold uppercase tracking-widest text-white shadow-lg"
               >
                 Peça seu orçamento
-              </a>
+              </TrackedWhatsAppLink>
             </div>
           </div>
         </div>
