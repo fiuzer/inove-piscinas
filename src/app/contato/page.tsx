@@ -32,7 +32,7 @@ export default function ContatoPage() {
             Fale com a Inove Piscinas
           </h1>
           <p className="mt-4 text-lg text-white/80">
-            Atendemos Rio de Janeiro e Niterói. Responda em até 24 horas.
+            Atendemos Rio de Janeiro e Niterói. Orçamento em até 24 horas.
           </p>
 
           <TrackedWhatsAppLink
