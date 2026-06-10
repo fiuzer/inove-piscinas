@@ -12,15 +12,14 @@ const WHATSAPP_HREF = WHATSAPP_LINKS.pinturaPiscina;
 
 const description = [
   "A pintura de piscina de fibra vai além da estética: ela protege a estrutura contra a ação do cloro, raios UV e variações de temperatura. A Inove Piscinas utiliza tintas e resinas específicas para fibra de vidro, garantindo aderência superior e acabamento duradouro.",
-  "Nossa equipe prepara a superfície com lixamento e tratamento adequados antes de aplicar qualquer produto. Esse processo é fundamental para que a tinta adira corretamente e não descole com o tempo — problema comum quando o serviço é feito com materiais inadequados ou sem o preparo certo.",
-  "Trabalhamos com uma gama de cores para que você personalize a aparência da sua piscina. Do azul clássico ao branco gelo, entregamos acabamento uniforme, liso e bonito, com camadas de proteção que garantem durabilidade no clima do Rio de Janeiro.",
+  "Nossa equipe prepara a superfície com lixamento e tratamento adequados antes de aplicar qualquer produto. Esse processo é fundamental para que a tinta tenha aderência correta e não descole com o tempo — problema comum quando o serviço é feito com materiais inadequados ou sem o preparo certo.",
+  "Azul piscina ou branco gelo, entregamos acabamento uniforme, liso e bonito, com camadas de proteção que garantem durabilidade no clima do Rio de Janeiro.",
   "Atendemos residências, condomínios e empreendimentos comerciais no Rio de Janeiro e Niterói. Após a avaliação, informamos o número de demãos necessárias e o prazo de execução.",
 ];
 
 const included = [
   "Lixamento e preparo da superfície",
   "Tratamento de fissuras superficiais",
-  "Aplicação de primer de aderência",
   "Pintura com tinta específica para fibra",
   "Aplicação de duas ou mais demãos",
   "Garantia de serviço",

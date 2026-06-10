@@ -72,7 +72,7 @@ export function Hero() {
             <TrackedWhatsAppLink
               href={WHATSAPP_LINKS.home}
               location="hero"
-              className="inline-flex items-center gap-3 rounded-full bg-white px-10 py-4 text-xl font-semibold text-[var(--brand-deep)] shadow-lg transition hover:-translate-y-0.5 hover:bg-white/90 sm:text-lg lg:px-8 lg:py-3 lg:text-base"
+              className="inline-flex items-center gap-3 rounded-full bg-white px-6 py-4 text-base font-semibold text-[var(--brand-deep)] shadow-lg transition hover:-translate-y-0.5 hover:bg-white/90 sm:px-10 sm:text-lg lg:px-8 lg:py-3 lg:text-base"
             >
               Fale com um especialista
               <ArrowRight className="size-5" />

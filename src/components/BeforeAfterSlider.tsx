@@ -12,6 +12,7 @@ type BeforeAfterSliderProps = {
   priority?: boolean;
   imageQuality?: number;
   imagePosition?: string;
+  imagePositionMobile?: string;
   imageYOffset?: string;
   imageScale?: number;
 };
@@ -24,13 +25,19 @@ export function BeforeAfterSlider({
   priority = false,
   imageQuality = 40,
   imagePosition = "center",
+  imagePositionMobile,
   imageYOffset = "0%",
   imageScale = 1.4,
 }: BeforeAfterSliderProps) {
   const imageStyle: React.CSSProperties =
     imageYOffset !== "0%"
-      ? { objectPosition: imagePosition, transform: `scale(${imageScale}) translateY(${imageYOffset})`, transformOrigin: "center center" }
-      : { objectPosition: imagePosition };
+      ? { transform: `scale(${imageScale}) translateY(${imageYOffset})`, transformOrigin: "center center" }
+      : {};
+
+  const containerVars = {
+    "--img-pos": imagePosition,
+    "--img-pos-mobile": imagePositionMobile ?? imagePosition,
+  } as React.CSSProperties;
   const [value, setValue] = useState(55);
   const id = useId();
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -69,6 +76,7 @@ export function BeforeAfterSlider({
       <div
         ref={containerRef}
         className="relative h-[220px] w-full touch-none sm:h-[300px] lg:h-[420px]"
+        style={containerVars}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
@@ -82,7 +90,7 @@ export function BeforeAfterSlider({
           quality={imageQuality}
           loading={priority ? "eager" : "lazy"}
           fetchPriority={priority ? "high" : "auto"}
-          className="object-cover"
+          className="object-cover [object-position:var(--img-pos-mobile)] sm:[object-position:var(--img-pos)]"
           style={imageStyle}
         />
         <div
@@ -96,7 +104,7 @@ export function BeforeAfterSlider({
             sizes="(max-width: 480px) 90vw, (max-width: 768px) 80vw, 520px"
             quality={imageQuality}
             loading="lazy"
-            className="object-cover"
+            className="object-cover [object-position:var(--img-pos-mobile)] sm:[object-position:var(--img-pos)]"
             style={imageStyle}
           />
         </div>

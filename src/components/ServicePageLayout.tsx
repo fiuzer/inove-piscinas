@@ -21,6 +21,7 @@ type ServicePageLayoutProps = {
   whatsappHref: string;
   breadcrumbLabel: string;
   imagePosition?: string;
+  imagePositionMobile?: string;
   imageYOffset?: string;
   imageScale?: number;
 };
@@ -29,7 +30,7 @@ const differentials = [
   {
     icon: Shield,
     title: "Garantia de serviço",
-    description: "Todos os projetos têm garantia por escrito, sem surpresas.",
+    description: "Todos os projetos têm garantia, sem surpresas.",
   },
   {
     icon: Wrench,
@@ -64,13 +65,14 @@ export function ServicePageLayout({
   whatsappHref,
   breadcrumbLabel,
   imagePosition,
+  imagePositionMobile,
   imageYOffset,
   imageScale,
 }: ServicePageLayoutProps) {
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden bg-[var(--brand-deep)] pb-20 pt-28 text-white sm:pt-36">
+      <section className="relative isolate overflow-hidden bg-[var(--brand-deep)] pt-8 text-white sm:pt-12">
         <div className="absolute inset-0">
           <Image
             src={heroBg}
@@ -78,30 +80,71 @@ export function ServicePageLayout({
             fill
             sizes="100vw"
             quality={60}
-            className="object-cover opacity-30"
+            className="object-cover opacity-30 md:opacity-50"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-deep)]/80 via-[var(--brand-dark)]/60 to-[var(--brand-deep)]/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-deep)] via-[rgba(0,29,61,0.75)] to-transparent" />
         </div>
-        <div className="relative mx-auto max-w-4xl px-6 text-center">
-          <nav aria-label="Breadcrumb" className="mb-6 text-sm text-white/50">
-            <Link href="/" className="transition hover:text-white/80">
-              Início
-            </Link>
-            <span className="mx-2">›</span>
-            <span className="text-white/80">{breadcrumbLabel}</span>
-          </nav>
-          <h1 className="font-heading text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
-            {title}
-          </h1>
-          <p className="mt-4 text-lg text-white/80">{subtitle}</p>
-          <TrackedWhatsAppLink
-            href={whatsappHref}
-            location={`service-hero-${breadcrumbLabel}`}
-            className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-base font-semibold text-[var(--brand-deep)] shadow-lg transition hover:-translate-y-0.5 hover:bg-white/90"
-          >
-            Pedir orçamento
-            <ArrowRight className="size-5" />
-          </TrackedWhatsAppLink>
+        <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-16 sm:pt-12 lg:flex-row lg:items-center lg:gap-16 lg:pb-28 lg:pt-16">
+          {/* Texto */}
+          <div className="order-2 flex-1 space-y-5 text-center sm:text-left lg:order-1 lg:text-left">
+            <nav aria-label="Breadcrumb" className="text-sm text-white/50">
+              <Link href="/" className="transition hover:text-white/80">
+                Início
+              </Link>
+              <span className="mx-2">›</span>
+              <span className="text-white/80">{breadcrumbLabel}</span>
+            </nav>
+            <h1 className="font-heading text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
+              {title}
+            </h1>
+            {/* Slider mobile — inline dentro do bloco de texto */}
+            <div className="lg:hidden">
+              <BeforeAfterSlider
+                beforeSrc={beforeSrc}
+                afterSrc={afterSrc}
+                beforeAlt={beforeAlt}
+                afterAlt={afterAlt}
+                priority
+                imageQuality={75}
+                imagePosition={imagePosition}
+                imagePositionMobile={imagePositionMobile}
+                imageYOffset={imageYOffset}
+                imageScale={imageScale}
+              />
+              <div className="mt-3 flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/60">
+                <span>Antes</span>
+                <span>Depois</span>
+              </div>
+            </div>
+            <p className="text-base text-white/80 sm:text-lg">{subtitle}</p>
+            <TrackedWhatsAppLink
+              href={whatsappHref}
+              location={`service-hero-${breadcrumbLabel}`}
+              className="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-base font-semibold text-[var(--brand-deep)] shadow-lg transition hover:-translate-y-0.5 hover:bg-white/90"
+            >
+              Pedir orçamento
+              <ArrowRight className="size-5" />
+            </TrackedWhatsAppLink>
+          </div>
+          {/* Slider desktop */}
+          <div className="order-1 hidden flex-1 lg:order-2 lg:block">
+            <BeforeAfterSlider
+              beforeSrc={beforeSrc}
+              afterSrc={afterSrc}
+              beforeAlt={beforeAlt}
+              afterAlt={afterAlt}
+              priority
+              imageQuality={80}
+              imagePosition={imagePosition}
+              imagePositionMobile={imagePositionMobile}
+              imageYOffset={imageYOffset}
+              imageScale={imageScale}
+            />
+            <div className="mt-4 flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/60">
+              <span>Antes</span>
+              <span>Depois</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -139,41 +182,14 @@ export function ServicePageLayout({
         </div>
       </section>
 
-      {/* Antes / Depois */}
+      {/* Diferenciais */}
       <WaveDivider variant="dark" flip className="bg-white" />
       <section className="bg-[var(--brand-deep)] py-12 sm:py-16">
-        <div className="mx-auto max-w-4xl px-6">
-          <p className="mb-2 text-center text-sm font-semibold uppercase tracking-[0.2em] text-white/60">
-            Resultado real
-          </p>
-          <p className="mb-8 text-center text-2xl font-semibold text-white sm:text-3xl font-heading">
-            Antes e depois
-          </p>
-          <BeforeAfterSlider
-            beforeSrc={beforeSrc}
-            afterSrc={afterSrc}
-            beforeAlt={beforeAlt}
-            afterAlt={afterAlt}
-            imageQuality={80}
-            imagePosition={imagePosition}
-            imageYOffset={imageYOffset}
-            imageScale={imageScale}
-          />
-          <div className="mt-4 flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/60">
-            <span>Antes</span>
-            <span>Depois</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Diferenciais */}
-      <WaveDivider flip />
-      <section className="bg-white py-12 sm:py-16">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/60">
             Diferenciais
           </p>
-          <h2 className="font-heading mt-3 text-2xl font-semibold text-[var(--brand-deep)] sm:text-3xl">
+          <h2 className="font-heading mt-3 text-2xl font-semibold text-white sm:text-3xl">
             Por que escolher a Inove Piscinas?
           </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -182,15 +198,15 @@ export function ServicePageLayout({
               return (
                 <div
                   key={d.title}
-                  className="rounded-3xl border border-slate-100 bg-white p-6 shadow-md"
+                  className="rounded-3xl border border-white/10 bg-white/10 p-6"
                 >
-                  <div className="flex size-12 items-center justify-center rounded-2xl bg-[var(--brand)]/10 text-[var(--brand)]">
+                  <div className="flex size-12 items-center justify-center rounded-2xl bg-white/10 text-white">
                     <Icon className="size-6" />
                   </div>
-                  <h3 className="mt-4 text-base font-semibold text-[var(--brand-deep)]">
+                  <h3 className="mt-4 text-base font-semibold text-white">
                     {d.title}
                   </h3>
-                  <p className="mt-2 text-sm text-[var(--muted)]">
+                  <p className="mt-2 text-sm text-white/70">
                     {d.description}
                   </p>
                 </div>
@@ -201,8 +217,8 @@ export function ServicePageLayout({
       </section>
 
       {/* FAQ */}
-      <WaveDivider />
-      <section className="bg-slate-50 py-12 sm:py-16">
+      <WaveDivider flip />
+      <section className="bg-white py-12 sm:py-16">
         <div className="mx-auto max-w-4xl px-6">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
             Dúvidas
@@ -232,7 +248,7 @@ export function ServicePageLayout({
       </section>
 
       {/* CTA final */}
-      <WaveDivider variant="dark" flip className="bg-slate-50" />
+      <WaveDivider variant="dark" flip className="bg-white" />
       <section className="bg-[var(--brand-deep)] py-16 text-white">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="font-heading text-2xl font-semibold text-sky-300 sm:text-3xl">
