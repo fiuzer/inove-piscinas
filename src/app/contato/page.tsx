@@ -21,7 +21,7 @@ export default function ContatoPage() {
       {/* Hero */}
       <section className="relative isolate overflow-hidden bg-[var(--brand-deep)] pb-16 pt-28 text-white sm:pt-36">
         <div className="absolute inset-0">
-          <Image src={heroBg} alt="" fill sizes="100vw" quality={60} className="object-cover opacity-30" />
+          <Image src={heroBg} alt="" fill priority sizes="100vw" quality={60} className="object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-deep)]/80 via-[var(--brand-dark)]/60 to-[var(--brand-deep)]/80" />
         </div>
         <div className="relative mx-auto max-w-4xl px-6 text-center">

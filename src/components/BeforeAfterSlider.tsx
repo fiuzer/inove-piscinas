@@ -86,7 +86,7 @@ export function BeforeAfterSlider({
           src={afterSrc}
           alt={afterAlt}
           fill
-          sizes="(max-width: 480px) 90vw, (max-width: 768px) 80vw, 520px"
+          sizes="(max-width: 480px) 380px, (max-width: 768px) 520px, 600px"
           quality={imageQuality}
           loading={priority ? "eager" : "lazy"}
           fetchPriority={priority ? "high" : "auto"}
@@ -101,7 +101,7 @@ export function BeforeAfterSlider({
             src={beforeSrc}
             alt={beforeAlt}
             fill
-            sizes="(max-width: 480px) 90vw, (max-width: 768px) 80vw, 520px"
+            sizes="(max-width: 480px) 380px, (max-width: 768px) 520px, 600px"
             quality={imageQuality}
             loading="lazy"
             className="object-cover [object-position:var(--img-pos-mobile)] sm:[object-position:var(--img-pos)]"

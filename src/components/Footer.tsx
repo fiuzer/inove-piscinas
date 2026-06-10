@@ -30,7 +30,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
               Serviços
             </p>
             <ul className="space-y-2">
@@ -48,7 +48,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
               Contato
             </p>
             <div className="space-y-2">

@@ -78,6 +78,7 @@ export function ServicePageLayout({
             src={heroBg}
             alt=""
             fill
+            priority
             sizes="100vw"
             quality={60}
             className="object-cover opacity-30 md:opacity-50"
