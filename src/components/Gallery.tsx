@@ -8,40 +8,40 @@ import { SectionHeading } from "./SectionHeading";
 const projects = [
   {
     id: 1,
-    before: "/imagens/piscina-antes1.jpg",
-    after: "/imagens/piscina1.jpg",
+    before: "/imagens/piscina-antes1.webp",
+    after: "/imagens/piscina1.webp",
     alt: "Projeto 01",
     className: "md:col-span-2 md:row-span-2",
   },
   {
     id: 2,
-    before: "/imagens/piscina-antes2.jpg",
-    after: "/imagens/piscina2.jpg",
+    before: "/imagens/piscina-antes2.webp",
+    after: "/imagens/piscina2.webp",
     alt: "Projeto 02",
   },
   {
     id: 3,
-    before: "/imagens/piscina-antes3.jpg",
-    after: "/imagens/piscina3.jpg",
+    before: "/imagens/pintura-piscina-antes.webp",
+    after: "/imagens/piscina3.webp",
     alt: "Projeto 03",
   },
   {
     id: 4,
-    before: "/imagens/piscina-antes4.jpg",
-    after: "/imagens/piscina4.jpg",
+    before: "/imagens/piscina-antes4.webp",
+    after: "/imagens/piscina4.webp",
     alt: "Projeto 04",
   },
   {
     id: 5,
-    before: "/imagens/piscina-antes5.jpg",
-    after: "/imagens/piscina5.jpg",
+    before: "/imagens/piscina-antes5.webp",
+    after: "/imagens/piscina5.webp",
     alt: "Projeto 05",
     className: "md:col-span-2",
   },
   {
     id: 6,
-    before: "/imagens/piscina-antes6.jpg",
-    after: "/imagens/piscina6.jpg",
+    before: "/imagens/piscina-antes6.webp",
+    after: "/imagens/piscina6.webp",
     alt: "Projeto 06",
   },
 ];
@@ -106,7 +106,7 @@ export function Gallery() {
                 fill
                 className="object-cover transition duration-500 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                quality={50}
+                quality={80}
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-70 transition group-hover:opacity-90" />
@@ -173,7 +173,7 @@ export function Gallery() {
                           fill
                           className="object-contain"
                           sizes="100vw"
-                          quality={60}
+                          quality={90}
                         />
                       </div>
                     </div>
