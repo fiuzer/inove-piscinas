@@ -1,7 +1,7 @@
 import { ArrowRight, MapPin, Shield, Star, Wrench } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import heroBg from "../../public/imagens/piscina_fundo.jpg";
+import heroBg from "../../public/imagens/piscina_fundo.webp";
 import { BeforeAfterSlider } from "./BeforeAfterSlider";
 import { TrackedWhatsAppLink } from "./TrackedWhatsAppLink";
 import { WaveDivider } from "./WaveDivider";

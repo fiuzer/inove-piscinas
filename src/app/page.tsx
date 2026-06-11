@@ -15,7 +15,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Inove Piscinas",
-    image: "https://www.inovepiscinas.com/imagens/piscina_fundo.jpg",
+    image: "https://www.inovepiscinas.com/imagens/piscina_fundo.webp",
     description:
       "Especialistas em reforma, pintura e manutenção de piscinas e banheiras de fibra no Rio de Janeiro e Niterói.",
     address: {

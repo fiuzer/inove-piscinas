@@ -16,7 +16,7 @@ export function Footer() {
           <div>
             <span className="relative block h-10 w-32">
               <Image
-                src="/imagens/logo-branca-inove.PNG"
+                src="/imagens/logo-branca-inove.webp"
                 alt="Inove Piscinas"
                 fill
                 className="object-contain object-left"

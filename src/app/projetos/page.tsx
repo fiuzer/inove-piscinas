@@ -2,7 +2,7 @@ import { Gallery } from "@/components/Gallery";
 import { TrackedWhatsAppLink } from "@/components/TrackedWhatsAppLink";
 import { WHATSAPP_LINKS } from "@/lib/whatsapp";
 import Image from "next/image";
-import heroBg from "../../../public/imagens/piscina_fundo.jpg";
+import heroBg from "../../../public/imagens/piscina_fundo.webp";
 import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 

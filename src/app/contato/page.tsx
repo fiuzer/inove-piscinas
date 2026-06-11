@@ -2,7 +2,7 @@ import { ContactSection } from "@/components/ContactSection";
 import { TrackedWhatsAppLink } from "@/components/TrackedWhatsAppLink";
 import { WHATSAPP_LINKS } from "@/lib/whatsapp";
 import Image from "next/image";
-import heroBg from "../../../public/imagens/piscina_fundo.jpg";
+import heroBg from "../../../public/imagens/piscina_fundo.webp";
 import { WaveDivider } from "@/components/WaveDivider";
 import { ArrowRight, Clock, Instagram, MapPin, Phone } from "lucide-react";
 import type { Metadata } from "next";

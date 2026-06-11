@@ -11,7 +11,7 @@ export function FloatingWhatsApp() {
       location="floating"
     >
       <Image
-        src="/imagens/whatsapp.png"
+        src="/imagens/whatsapp.webp"
         alt="WhatsApp"
         width={40}
         height={40}

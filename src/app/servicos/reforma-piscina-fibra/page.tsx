@@ -77,8 +77,8 @@ export default function ReformaPiscinaFibraPage() {
         description={description}
         included={included}
         faq={faq}
-        beforeSrc="/imagens/antes-depois-reforma-piscina2.png"
-        afterSrc="/imagens/antes-depois-reforma-piscina1.png"
+        beforeSrc="/imagens/antes-depois-reforma-piscina2.webp"
+        afterSrc="/imagens/antes-depois-reforma-piscina1.webp"
         beforeAlt="Piscina de fibra antes da reforma"
         afterAlt="Piscina de fibra depois da reforma"
         imageYOffset="-8%"

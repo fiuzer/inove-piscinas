@@ -76,8 +76,8 @@ export default function PinturaPiscinaFibraPage() {
         description={description}
         included={included}
         faq={faq}
-        beforeSrc="/imagens/pintura-piscina-antes.jpg"
-        afterSrc="/imagens/pintura-piscina-depois.png"
+        beforeSrc="/imagens/pintura-piscina-antes.webp"
+        afterSrc="/imagens/pintura-piscina-depois.webp"
         beforeAlt="Piscina de fibra antes da pintura"
         afterAlt="Piscina de fibra depois da pintura"
         whatsappHref={WHATSAPP_HREF}

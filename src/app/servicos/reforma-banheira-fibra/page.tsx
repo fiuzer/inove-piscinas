@@ -72,8 +72,8 @@ export default function ReformaBanheiraFibraPage() {
         description={description}
         included={included}
         faq={faq}
-        beforeSrc="/imagens/piscina4.jpg"
-        afterSrc="/imagens/piscina-antes4.jpg"
+        beforeSrc="/imagens/piscina4.webp"
+        afterSrc="/imagens/piscina-antes4.webp"
         beforeAlt="Banheira de fibra antes da reforma"
         afterAlt="Banheira de fibra depois da reforma"
         whatsappHref={WHATSAPP_HREF}

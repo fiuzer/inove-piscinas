@@ -77,8 +77,8 @@ export default function ConsertoPiscinaFibraPage() {
         description={description}
         included={included}
         faq={faq}
-        beforeSrc="/imagens/conserto-piscina-depois.JPG"
-        afterSrc="/imagens/conserto-piscina-antes.JPG"
+        beforeSrc="/imagens/conserto-piscina-depois.webp"
+        afterSrc="/imagens/conserto-piscina-antes.webp"
         beforeAlt="Piscina de fibra antes do conserto"
         afterAlt="Piscina de fibra depois do conserto"
         whatsappHref={WHATSAPP_HREF}

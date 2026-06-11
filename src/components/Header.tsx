@@ -76,8 +76,8 @@ export function Header() {
               <Image
                 src={
                   scrolled
-                    ? "/imagens/logo-inove-piscinas-azul.PNG"
-                    : "/imagens/logo-branca-inove.PNG"
+                    ? "/imagens/logo-inove-piscinas-azul.webp"
+                    : "/imagens/logo-branca-inove.webp"
                 }
                 alt="Inove Piscinas"
                 fill

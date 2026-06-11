@@ -1,7 +1,7 @@
 ﻿import { WHATSAPP_LINKS } from "@/lib/whatsapp";
 import { ArrowRight, ShieldCheck, Star, Wrench } from "lucide-react";
 import Image from "next/image";
-import heroBg from "../../public/imagens/piscina_fundo.jpg";
+import heroBg from "../../public/imagens/piscina_fundo.webp";
 import { BeforeAfterSlider } from "./BeforeAfterSlider";
 import { TrackedWhatsAppLink } from "./TrackedWhatsAppLink";
 
@@ -50,8 +50,8 @@ export function Hero() {
             </h1>
             <div className="mt-6 lg:hidden">
               <BeforeAfterSlider
-                beforeSrc="/imagens/depoispiscina.jpg"
-                afterSrc="/imagens/antespiscina.jpg"
+                beforeSrc="/imagens/depoispiscina.webp"
+                afterSrc="/imagens/antespiscina.webp"
                 beforeAlt="Piscina antes da reforma"
                 afterAlt="Piscina depois da reforma"
                 priority
@@ -107,8 +107,8 @@ export function Hero() {
 
         <div className="order-1 hidden flex-1 lg:order-2 lg:block">
           <BeforeAfterSlider
-            beforeSrc="/imagens/depoispiscina.jpg"
-            afterSrc="/imagens/antespiscina.jpg"
+            beforeSrc="/imagens/depoispiscina.webp"
+            afterSrc="/imagens/antespiscina.webp"
             beforeAlt="Piscina antes da reforma"
             afterAlt="Piscina depois da reforma"
             imageQuality={75}
