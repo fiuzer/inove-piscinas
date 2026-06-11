@@ -111,6 +111,7 @@ export function Hero() {
             afterSrc="/imagens/antespiscina.webp"
             beforeAlt="Piscina antes da reforma"
             afterAlt="Piscina depois da reforma"
+            priority
             imageQuality={75}
           />
           <div className="mt-4 flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/70">

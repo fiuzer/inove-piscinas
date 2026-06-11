@@ -61,6 +61,13 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        {/* Preload da imagem LCP (antespiscina.webp) para reduzir o Resource Load Delay */}
+        <link
+          rel="preload"
+          as="image"
+          href="/_next/image?url=%2Fimagens%2Fantespiscina.webp&w=828&q=75"
+          fetchPriority="high"
+        />
         <Script id="gtm-deferred" strategy="afterInteractive">
           {`(function(w,d,l,i){
   w[l]=w[l]||[];
