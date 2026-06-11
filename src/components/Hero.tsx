@@ -20,7 +20,7 @@ export function Hero() {
           alt="Piscina com vista ao entardecer"
           fill
           sizes="100vw"
-          quality={40}
+          quality={20}
           priority
           placeholder="blur"
           className="object-cover opacity-35 md:hidden"
@@ -30,7 +30,7 @@ export function Hero() {
           alt="Piscina com vista ao entardecer"
           fill
           sizes="100vw"
-          quality={75}
+          quality={40}
           priority
           placeholder="blur"
           className="hidden object-cover opacity-50 md:block"
@@ -55,7 +55,7 @@ export function Hero() {
                 beforeAlt="Piscina antes da reforma"
                 afterAlt="Piscina depois da reforma"
                 priority
-                imageQuality={75}
+                imageQuality={60}
               />
               <div className="mt-4 flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/70">
                 <span>Antes</span>
@@ -112,7 +112,7 @@ export function Hero() {
             beforeAlt="Piscina antes da reforma"
             afterAlt="Piscina depois da reforma"
             priority
-            imageQuality={75}
+            imageQuality={60}
           />
           <div className="mt-4 flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/70">
             <span>Antes</span>
