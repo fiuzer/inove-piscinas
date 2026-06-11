@@ -81,6 +81,7 @@ export function Header() {
                 }
                 alt="Inove Piscinas"
                 fill
+                priority={!scrolled}
                 className="object-contain"
                 sizes="(max-width: 768px) 120px, 180px"
               />
