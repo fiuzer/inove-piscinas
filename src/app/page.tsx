@@ -39,6 +39,15 @@ export default function Home() {
 
   return (
     <main className="bg-[var(--background)]">
+      {/* Preload responsivo da imagem LCP — browser escolhe o tamanho certo por DPR sem double-download */}
+      <link
+        rel="preload"
+        as="image"
+        href="/_next/image?url=%2Fimagens%2Fantespiscina.webp&w=1080&q=60"
+        imageSrcSet="/_next/image?url=%2Fimagens%2Fantespiscina.webp&w=640&q=60 640w, /_next/image?url=%2Fimagens%2Fantespiscina.webp&w=750&q=60 750w, /_next/image?url=%2Fimagens%2Fantespiscina.webp&w=828&q=60 828w, /_next/image?url=%2Fimagens%2Fantespiscina.webp&w=1080&q=60 1080w, /_next/image?url=%2Fimagens%2Fantespiscina.webp&w=1200&q=60 1200w"
+        imageSizes="(max-width: 480px) 380px, (max-width: 768px) 520px, 600px"
+        fetchPriority="high"
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
