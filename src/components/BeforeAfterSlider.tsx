@@ -104,6 +104,7 @@ export function BeforeAfterSlider({
             sizes="(max-width: 480px) 380px, (max-width: 768px) 520px, 600px"
             quality={imageQuality}
             loading={priority ? "eager" : "lazy"}
+            fetchPriority={priority ? "high" : "auto"}
             className="object-cover [object-position:var(--img-pos-mobile)] sm:[object-position:var(--img-pos)]"
             style={imageStyle}
           />
