@@ -5,20 +5,20 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Pintura de Piscina de Fibra RJ — Resistente ao Cloro",
   description:
-    "Pintura profissional de piscinas de fibra com materiais resistentes ao cloro e ao sol. Acabamento premium e garantia de serviço. Atendemos RJ e Niterói.",
+    "Restauração de pintura profissional de piscinas de fibra com materiais resistentes ao cloro e ao sol. Acabamento premium e garantia de serviço. Atendemos RJ e Niterói.",
 };
 
 const WHATSAPP_HREF = WHATSAPP_LINKS.pinturaPiscina;
 
 const description = [
-  "A pintura de piscina de fibra vai além da estética: ela protege a estrutura contra a ação do cloro, raios UV e variações de temperatura. A Inove Piscinas utiliza tintas e resinas específicas para fibra de vidro, garantindo aderência superior e acabamento duradouro.",
+  "A pintura de piscina de fibra vai além da estética: ela protege a estrutura contra a ação do cloro, raios UV e variações de temperatura. Restaurar sua piscinas é a especialidade da Inove. Utilizamos tintas e resinas específicas para fibra de vidro, garantindo aderência superior e acabamento duradouro. Restaurar sua piscina é prolongar sua vida útil e manter a beleza por mais tempo.",
   "Nossa equipe prepara a superfície com lixamento e tratamento adequados antes de aplicar qualquer produto. Esse processo é fundamental para que a tinta tenha aderência correta e não descole com o tempo — problema comum quando o serviço é feito com materiais inadequados ou sem o preparo certo.",
   "Azul piscina ou branco gelo, entregamos acabamento uniforme, liso e bonito, com camadas de proteção que garantem durabilidade no clima do Rio de Janeiro.",
   "Atendemos residências, condomínios e empreendimentos comerciais no Rio de Janeiro e Niterói. Após a avaliação, informamos o número de demãos necessárias e o prazo de execução.",
 ];
 
 const included = [
-  "Lixamento e preparo da superfície",
+  "Lixamento e preparo para a restauração da superfície",
   "Tratamento de fissuras superficiais",
   "Pintura com tinta específica para fibra",
   "Aplicação de duas ou mais demãos",
@@ -72,7 +72,7 @@ export default function PinturaPiscinaFibraPage() {
       />
       <ServicePageLayout
         title="Pintura de Piscina de Fibra no Rio de Janeiro"
-        subtitle="Pintura profissional com materiais resistentes ao cloro e ao sol, com acabamento premium e garantia."
+        subtitle="Restauração de pintura profissional com materiais resistentes ao cloro e ao sol, com acabamento premium e garantia."
         description={description}
         included={included}
         faq={faq}

@@ -14,15 +14,14 @@ const description = [
   "O conserto de piscina de fibra é a solução ideal para resolver fissuras, furos, vazamentos e delaminações antes que o problema se agrave e cause danos maiores. A Inove Piscinas realiza o diagnóstico completo e aplica os reparos com materiais específicos para fibra de vidro, garantindo resistência e durabilidade.",
   "O processo começa com a identificação precisa do dano: mapeamos as fissuras, localizamos pontos de vazamento e avaliamos o estado geral da superfície. Só então iniciamos o reparo com laminação em fibra de vidro, resinas e produtos de alta aderência adequados para superfícies úmidas.",
   "Após o conserto estrutural, realizamos o acabamento com pintura de proteção, devolvendo a aparência original da piscina e criando uma barreira adicional contra infiltrações futuras. O resultado é uma piscina estruturalmente sólida, com superfície lisa e protegida.",
-  "Atendemos residências, condomínios, hotéis e pousadas no Rio de Janeiro e Niterói. Entre em contato para agendar uma vistoria sem compromisso.",
+  "Atendemos residências, condomínios, hotéis e pousadas no Rio de Janeiro e Niterói.",
 ];
 
 const included = [
   "Diagnóstico e mapeamento de fissuras e furos",
   "Reparo estrutural com laminação em fibra de vidro",
-  "Aplicação de resinas de alta aderência",
+  "Aplicação de resinas de alta durabilidade",
   "Tratamento de vazamentos e pontos de infiltração",
-  "Acabamento e pintura de proteção",
   "Garantia de serviço",
 ];
 

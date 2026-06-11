@@ -12,17 +12,16 @@ const WHATSAPP_HREF = WHATSAPP_LINKS.reformaBanheira;
 
 const description = [
   "Banheiras de fibra são investimentos que, com o tempo, podem apresentar fissuras, manchas, perda de brilho ou danos estruturais. A Inove Piscinas oferece serviço completo de reforma de banheiras de fibra no Rio de Janeiro e Niterói.",
-  "O processo começa com uma avaliação detalhada do estado da banheira. Nossa equipe identifica todos os pontos de dano — trincas, bolhas, desgaste de gel coat — e apresenta um diagnóstico honesto com o que é necessário para restaurar a peça.",
-  "Utilizamos materiais de alta qualidade compatíveis com a estrutura de fibra de vidro, garantindo resistência à água quente, produtos de limpeza e ao uso cotidiano. O resultado é uma banheira com aparência renovada e superfície lisa, como se fosse nova.",
+  "O processo começa com uma avaliação detalhada do estado da banheira. Nossa equipe identifica todos os pontos de dano — trincas, bolhas, desgaste — e apresenta um diagnóstico honesto com o que é necessário para restaurar a peça.",
+  "Utilizamos materiais de alta qualidade compatíveis com a estrutura de fibra de vidro, garantindo resistência à água quente, produtos de limpeza e ao uso cotidiano. O resultado é uma banheira com aparência renovada e brilhosa, como se fosse nova.",
   "Nosso diferencial é o atendimento cuidadoso e o respeito ao ambiente do cliente. Trabalhamos com limpeza e organização, minimizando qualquer transtorno durante o serviço.",
 ];
 
 const included = [
   "Avaliação completa da estrutura",
   "Conserto de fissuras e trincas",
-  "Tratamento de bolhas e desgastes",
-  "Aplicação de resina de fibra de vidro",
-  "Acabamento e polimento final",
+  "Aplicação de resina de fibra de vidro (Caso necessário)",
+  "Aplicação de duas camadas de tinta",
   "Garantia de serviço",
 ];
 
@@ -40,7 +39,7 @@ const faq = [
   {
     question: "Quanto tempo demora a reforma de uma banheira?",
     answer:
-      "Em média de 1 a 3 dias úteis, dependendo do nível de dano. Após a avaliação, informamos o prazo exato.",
+      "Em média de 2 dias, dependendo do nível de dano. Após a avaliação, informamos o prazo exato.",
   },
   {
     question: "O serviço tem garantia?",
