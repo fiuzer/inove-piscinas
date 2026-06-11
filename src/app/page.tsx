@@ -39,13 +39,6 @@ export default function Home() {
 
   return (
     <main className="bg-[var(--background)]">
-      {/* Preload da imagem LCP apenas na home — w=1080 cobre DPR 2.75 (Moto G do PageSpeed) */}
-      <link
-        rel="preload"
-        as="image"
-        href="/_next/image?url=%2Fimagens%2Fantespiscina.webp&w=1080&q=60"
-        fetchPriority="high"
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
